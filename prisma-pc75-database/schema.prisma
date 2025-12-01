@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output = "../prisma-pc75-database/pc75-database-client-types"
+}
+
+datasource db {
+  provider = "sqlserver"
+}
+
+model DatasetCycle {
+  LoadID                  BigInt      @id(map: "PK__DatasetC__0D9A2F1FC3C3D8E3") @default(autoincrement())
+  ShiftId                 Int?
+  ShiftDate               DateTime? @db.Date
+  Bin5Mins                DateTime? @db.DateTime
+  Bin15Mins               DateTime? @db.DateTime
+  Bin30Mins               DateTime? @db.DateTime
+  Bin60Mins               DateTime? @db.DateTime  // format jam saja, contoh: "10:30:00.0000000"
+  LoadPit                 String? @db.VarChar(255)
+  LoadRegion              String? @db.VarChar(255)
+  LoadLocation            String? @db.VarChar(255)
+  DumpLocation            String? @db.VarChar(255)
+  ExcavID                 String? @db.VarChar(255)
+  ExcavSize               Int? 
+  ExcavType               String? @db.VarChar(255)
+  ExcavOperatorID         String? @db.VarChar(255)
+  ExcavDeptID             Int?
+  ExcavOwnerID            Int?
+  TruckID                 String? @db.VarChar(255)
+  TruckSize               Int? 
+  TruckType               String? @db.VarChar(255)
+  TruckOperatorID         String? @db.VarChar(255)
+  TruckDeptID             Int?
+  TruckOwnerID            Int?
+  AssignToFrontTimestamp  DateTime? @db.DateTime
+  ExpctdEmptyTravelSec    Int?
+  EmptyTravDurationSec    Int?
+  HangTimeSec             Int?
+  ArriveAtFrontTimestamp  DateTime? @db.DateTime
+  QueTimeSec              Int?
+  SpottingTimestamp       DateTime? @db.DateTime
+  SpotTimeSec             Int?
+  LoadingTimestamp        DateTime? @db.DateTime
+  LoadingTimeSec          Int?
+  FullTimestamp           DateTime? @db.DateTime
+  ExpctdFullTravelSec     Int?
+  FullTravDurationSec     Int?
+  ArriveAtDumpTimestamp   DateTime? @db.DateTime
+  DumpTimeSec             Int?
+  EmptyTimestamp          DateTime? @db.DateTime
+  TrucksInQueTimeFull     Int?
+  MaterialID              Int?
+  EmptyDistKM             Float?
+  FullDistKM              Float?
+  FieldFirstDipper        DateTime? @db.DateTime
+  FieldLastDipper         DateTime? @db.DateTime
+  TonsAtLoad              Int?
+  TonsAtDump              Int?
+  TruckFactor             Float?
+  Elocked                 String? @db.VarChar(255)
+  DiffPass1               Int?
+  DiffPass2               Int?
+  DiffPass3               Int?
+  DiffPass4               Int?
+  DiffPass5               Int?
+  DiffPass6               Int?
+  DiffPass7               Int?
+  DiffPass8               Int?
+  DiffPass9               Int?
+  DiffPass10              Int?
+  DiffTime1               Int?
+  DiffTime2               Int?
+  DiffTime3               Int?
+  DiffTime4               Int?
+  DiffTime5               Int?
+  DiffTime6               Int?
+  DiffTime7               Int?
+  DiffTime8               Int?
+  DiffTime9               Int?
+  DiffTime10              Int?
+  FlagExtraload           String? @db.VarChar(255)
+}
+
+

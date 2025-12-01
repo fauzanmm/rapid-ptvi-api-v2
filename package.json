@@ -1,0 +1,27 @@
+{
+  "name": "hello-prisma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "npx prisma generate --schema ./prisma-pc04-database/schema.prisma && npx prisma generate --schema ./prisma-pc75-database/schema.prisma",
+    "dev": "npx tsx --no-deprecation main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/mssql": "^9.1.8",
+    "@types/node": "^24.10.1",
+    "prisma": "^7.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/adapter-mssql": "^7.0.1",
+    "@prisma/client": "^7.0.1",
+    "dotenv": "^17.2.3"
+  }
+}
