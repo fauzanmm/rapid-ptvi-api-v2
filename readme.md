@@ -2,7 +2,7 @@
 
 ## How to Deploy
 
-1. Donwload repository dari git ini
+1. Download repository dari git ini
 2. Create file env dan isi dengan ini
 
 ```bash
