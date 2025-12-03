@@ -1,12 +1,12 @@
 import "dotenv/config";
-import { PrismaClient } from "../prisma-pc04-database/pc04-database-client-types/client";
+import { PrismaClient } from "../../prisma-pc75-database/pc75-database-client-types/client";
 import { PrismaMssql } from "@prisma/adapter-mssql";
 
 const sqlConfig = {
-  user: process.env.DB_PC04_USER!,
-  password: process.env.DB_PC04_PASSWORD!,
-  database: process.env.DB_PC04_NAME!,
-  server: process.env.DB_PC04_HOST!,
+  user: process.env.DB_PC75_USER!,
+  password: process.env.DB_PC75_PASSWORD!,
+  database: process.env.DB_PC75_NAME!,
+  server: process.env.DB_PC75_HOST!,
   pool: {
     max: 10,
     min: 0,
@@ -19,6 +19,6 @@ const sqlConfig = {
 };
 
 const adapter = new PrismaMssql(sqlConfig);
-const prismaPC04 = new PrismaClient({ adapter });
+const prismaPC75 = new PrismaClient({ adapter });
 
-export { prismaPC04 };
+export { prismaPC75 };
