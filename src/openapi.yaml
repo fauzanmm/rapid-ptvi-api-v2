@@ -1,0 +1,823 @@
+---
+openapi: 3.0.2
+info:
+  title: RAPID API
+  version: 1.0.0
+  description:
+    The RAPID Data API provides fast and structured access to cubed datasets
+    from use cases or integration of modular applications. This dataset has gone through
+    a curation and transformation process, so it is ready to be used for analysis,
+    reporting, integration between applications and advanced application development.
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  contact:
+    email: fauzan.mauludy@global.komatsu
+servers:
+  - url: http://10.138.216.18:3000/api
+    description: Development server
+tags:
+  - name: Engine Detection
+    description:
+      The dataset is used to detect engine on when the truck is not ready
+      and has rpm and fuel burn rate
+paths:
+  "/v1/fuelTimeLoss/current":
+    get:
+      summary:
+        Get a list of trucks that are currently has status idle/delay/down
+        in Dispatch, but have Fuel Rate and Engine Speed parameter values in Minecare
+      responses:
+        "200":
+          description: Current data fetched successfully
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/FuelTimeLossCurrent"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                BadRequest:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter 'department' is not valid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "500":
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                ServerError:
+                  value:
+                    statusCode: 500
+                    error: Internal Server Error
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+      tags:
+        - Engine Detection
+  "/v1/fuelTimeLoss/shift/{department}":
+    get:
+      summary:
+        Get a list of trucks that are current shift has status idle/delay/down
+        in Dispatch, but have Fuel Rate and Engine Speed parameter values in Minecare
+      responses:
+        "200":
+          description: Current data fetched successfully
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/FuelTimeLossCurrent"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                BadRequest:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter 'department' is not valid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "500":
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                ServerError:
+                  value:
+                    statusCode: 500
+                    error: Internal Server Error
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+      tags:
+        - Engine Detection
+      parameters:
+        - name: department
+          in: path
+          description:
+            Department value will filter the truck list data according to
+            the department trucks that have been set
+          required: true
+          schema:
+            type: string
+            default: bintang
+            enum:
+              - hatari
+              - bintang
+              - coal
+              - mine services
+              - thiess
+              - pama
+              - other
+              - jupiter
+              - msd
+              - cphd
+              - geology
+              - mo
+              - drill & blast
+  "/v1/fuelTimeLoss/shift/table/{department}":
+    get:
+      summary:
+        Get a table list of trucks that are current shift has status idle/delay/down
+        in Dispatch, but have Fuel Rate and Engine Speed parameter values in Minecare.
+        This data will be splitted by pagination
+      responses:
+        "200":
+          description: Current data fetched successfully
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FuelTimeLossShiftTable"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                BadRequest:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter 'department' is not valid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "500":
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                ServerError:
+                  value:
+                    statusCode: 500
+                    error: Internal Server Error
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+      tags:
+        - Engine Detection
+      parameters:
+        - name: department
+          in: path
+          description:
+            Department value will filter the truck list data according to
+            the department trucks that have been set
+          required: true
+          schema:
+            type: string
+            default: bintang
+            enum:
+              - hatari
+              - bintang
+              - coal
+              - mine services
+              - thiess
+              - pama
+              - other
+              - jupiter
+              - msd
+              - cphd
+              - geology
+              - mo
+              - drill & blast
+        - name: page
+          in: query
+          description: Page number for pagination, default is 1
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+            minimum: 1
+        - name: limit
+          in: query
+          description: Limit number of data per page, default is 50, maximum is 100
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 50
+            minimum: 1
+            maximum: 1000
+  "/v1/fuelTimeLoss/shift/summary/{department}":
+    get:
+      summary:
+        Get a summary of lost hours and lost fuels for each department that
+        are current shift
+      responses:
+        "200":
+          description: Current data fetched successfully
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/FuelTimeLossShiftSummary"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                BadRequest:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter 'department' is not valid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "500":
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                ServerError:
+                  value:
+                    statusCode: 500
+                    error: Internal Server Error
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+      tags:
+        - Engine Detection
+      parameters:
+        - name: department
+          in: path
+          description:
+            Department value will filter the truck list data according to
+            the department trucks that have been set
+          required: true
+          schema:
+            type: string
+            default: bintang
+            enum:
+              - hatari
+              - bintang
+              - coal
+              - mine services
+              - thiess
+              - pama
+              - other
+              - jupiter
+              - msd
+              - cphd
+              - geology
+              - mo
+              - drill & blast
+  "/v1/fuelTimeLoss/month":
+    get:
+      summary: Get a summarized data list of truck fuel loss and hour loss each month
+      parameters:
+        - name: month
+          in: query
+          required: true
+          description: Month value January until December (1-12) will filter the data
+          schema:
+            type: integer
+            format: int32
+            default: 1
+            minimum: 1
+            maximum: 12
+        - name: department
+          in: query
+          required: false
+          description:
+            Department value will filter the truck list data according to
+            the department trucks that have been set
+          schema:
+            type: string
+            default: bintang
+            enum:
+              - hatari
+              - bintang
+              - coal
+              - mine services
+              - thiess
+              - pama
+              - other
+              - jupiter
+              - msd
+              - cphd
+              - geology
+              - mo
+              - drill & blast
+      responses:
+        "200":
+          description: Data fetch successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FuelTimeLossMonth"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                BadRequest:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+        "500":
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                ServerError:
+                  value:
+                    statusCode: 500
+                    error: Internal Server Error
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+      tags:
+        - Engine Detection
+  "/v1/fuelTimeLoss/month/summary/monthly":
+    get:
+      summary: Get a summarized data list of truck fuel loss and hour loss each month
+      parameters:
+        - name: department
+          in: query
+          required: false
+          description:
+            Department value will filter the data according to the department
+            trucks that have been set
+          schema:
+            type: string
+            default: bintang
+            enum:
+              - hatari
+              - bintang
+              - coal
+              - mine services
+              - thiess
+              - pama
+              - other
+              - jupiter
+              - msd
+              - cphd
+              - geology
+              - mo
+              - drill & blast
+        - name: crew
+          in: query
+          required: false
+          description:
+            Crew value will filter the data according to the operator crew
+            that have been set
+          schema:
+            type: string
+            default: Crew C
+            enum:
+              - All
+              - Crew A
+              - Crew B
+              - Crew C
+        - name: reason
+          in: query
+          required: false
+          description:
+            Reason value will filter the data according to the reason that
+            have been set
+          schema:
+            type: string
+        - name: operator
+          in: query
+          required: false
+          description:
+            Operator name will filter the data according to the operator
+            name that have been set
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Data fetch successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FuelTimeLossMonthSummary"
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                BadRequest:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+        "500":
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                ServerError:
+                  value:
+                    statusCode: 500
+                    error: Internal Server Error
+                    message: data is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+      tags:
+        - Engine Detection
+components:
+  schemas:
+    FuelTimeLossCurrent:
+      type: object
+      description:
+        Current list truck which has delay/idle/down status in Dispatch
+        and has fuel rate or rpm value in Minecare
+      properties:
+        shiftId:
+          type: integer
+          format: int32
+          description: Current shift id
+          nullable: false
+          example: 251202003
+        equipment:
+          type: string
+          maxLength: 12
+          description: Equipment truck id
+          nullable: false
+          example: HT2125
+        status:
+          type: string
+          maxLength: 12
+          description: Current equipment status in Dispatch
+          nullable: false
+          enum:
+            - Down
+            - Delay
+            - Standby
+            - Shiftchange
+          example: Delay
+        reason:
+          type: string
+          maxLength: 255
+          description: Current equipment reason in Dispatch
+          nullable: false
+          example: DIISI SOLAR
+        load:
+          type: string
+          maxLength: 50
+          description: Current equipment load material in Dispatch
+          nullable: true
+          example: Empty
+          enum:
+            - Empty
+            - ROM Petea
+            - SSP Rehandle Sorowako
+            - OB Sorowako
+            - DSSP East
+            - Quarry Sorowako
+            - DKP East
+            - OB Petea
+            - TopSoil Petea
+            - Limonite East
+            - etc.
+        location:
+          type: string
+          maxLength: 64
+          description: Current equipment location in Dispatch
+          nullable: true
+          example: FUEL_CLARA
+        unitLoc:
+          type: string
+          maxLength: 64
+          description: Current equipment unitloc in Dispatch
+          nullable: true
+          example: Shop
+        opearatorName:
+          type: string
+          maxLength: 40
+          description: Current operator name in Dispatch
+          nullable: true
+          example: MUH. JUMARDIN
+        crew:
+          type: string
+          maxLength: 12
+          description: Current crew in Dispatch
+          nullable: true
+          enum:
+            - Shift A
+            - Shift B
+            - Shift C
+          example: Crew A
+        idFuelRate:
+          type: integer
+          format: int64
+          description: Fuel rate event id in Minecare
+          nullable: false
+          example: 93732042
+        fuelRate:
+          type: number
+          format: float
+          description: Fuel rate value in Minecare (liter/hour)
+          nullable: true
+          example: 11.483334
+        fuelLoss:
+          type: number
+          format: float
+          description: Fuel loss value per minute in Minecare (liter/minute)
+          nullable: true
+          example: 0.1913889
+        timeFuelRate:
+          type: string
+          format: date-time
+          description: Datetime shows when the fuel rate parameter was logged in Minecare
+          nullable: true
+          example: "2025-12-02T16:07:29.000Z"
+        idRpm:
+          type: integer
+          format: int64
+          description: Engine speed or RPM event id in Minecare
+          nullable: false
+          example: 93732037
+        rpm:
+          type: number
+          format: float
+          description: Engine spee or RPM value in Minecare
+          nullable: false
+          example: 654.33331
+        timeRpm:
+          type: string
+          format: date-time
+          description:
+            Datetime shows when the Engine Speed or RPM parameter was logged
+            in Minecare
+          nullable: false
+          example: "2025-12-03T13:48:54.000Z"
+        refreshTime:
+          type: string
+          format: date-time
+          description: Datetime shows when the data was populated
+          nullable: false
+          example: "2025-12-03T13:49:41.000Z"
+    FuelTimeLossShiftTable:
+      type: object
+      description:
+        This dataset only saved by current shift. It lists trucks with
+        Delay/Idle/Down status in Dispatch that also have fuel rate or RPM value in
+        Minecare.
+      properties:
+        data:
+          type: object
+          properties:
+            data:
+              type: array
+              items:
+                "$ref": "#/components/schemas/FuelTimeLossCurrent"
+            date:
+              type: string
+              format: date-time
+              description: Latest date when the data was fetched
+              nullable: false
+              example: "2025-07-07T10:18:46.680Z"
+            crews:
+              type: array
+              description: List of crews involved in the current shift
+              items:
+                type: object
+                properties:
+                  Crew:
+                    type: string
+                    maxLength: 12
+                    example: Crew B
+                required:
+                  - Crew
+              nullable: false
+              example:
+                - Crew: All
+                - Crew: Crew B
+            shiftName:
+              type: string
+              maxLength: 12
+              description: Current shift when operation is running
+              nullable: false
+              example: Day
+            page:
+              type: integer
+              format: int32
+              description: Current page number
+              nullable: false
+              example: 2
+            limit:
+              type: integer
+              format: int32
+              description: Number of items per page
+              nullable: false
+              example: 50
+            skip:
+              type: integer
+              format: int32
+              description: Number of offseet per page
+              nullable: false
+              example: 1
+            totalData:
+              type: integer
+              format: int32
+              description: Total number of items (across all pages)
+              nullable: false
+              example: 120
+            totalPage:
+              type: integer
+              format: int32
+              description: Total number of pages
+              nullable: false
+              example: 3
+            next:
+              type: boolean
+              description: Whether there is a next page
+              nullable: false
+              example: true
+            previous:
+              type: boolean
+              description: Whether there is a previous page
+              nullable: false
+              example: true
+    FuelTimeLossShiftSummary:
+      type: object
+      description:
+        This dataset only saved by current shift, it will show list truck
+        which has delay/idle/down status in Dispatch and has fuel rate or rpm value
+        in Minecare
+      properties:
+        Department:
+          type: string
+          maxLength: 64
+          description: Current department unit in Dispatch
+          nullable: true
+          enum:
+            - HATARI
+            - BINTANG
+            - COAL
+            - MINE SERVICES
+            - THIESS
+            - PAMA
+            - OTHER
+            - JUPITER
+            - MSD
+            - CPHD
+            - GEOLOGY
+            - MO
+            - DRILL & BLAST
+          example: BINTANG
+        LossHour:
+          type: integer
+          format: int64
+          description: Event record unique id
+          nullable: false
+          example: 42
+        LossFuel:
+          type: number
+          format: float
+          description: Fuel loss value per minute in Minecare (liter)
+          nullable: true
+          example: 150.34
+    FuelTimeLossMonth:
+      type: object
+      description: Summarized dataset of loss fuel and loss hour for one month
+      properties:
+        dateYear:
+          type: integer
+          format: int32
+          description: Last date year
+          nullable: false
+          example: 2025
+        dateMonth:
+          type: string
+          maxLength: 24
+          description: Month name
+          nullable: false
+          example: January
+        opearatorName:
+          type: string
+          maxLength: 40
+          description: Operator name in Dispatch
+          nullable: true
+          example: Sukimin
+        crew:
+          type: string
+          maxLength: 12
+          description: Current crew in Dispatch
+          nullable: true
+          enum:
+            - Crew A
+            - Crew B
+            - Crew C
+          example: Crew C
+        reason:
+          type: string
+          maxLength: 255
+          description: Current equipment reason in Dispatch
+          nullable: false
+          example: MEAL
+        department:
+          type: string
+          maxLength: 64
+          description: Current department unit in Dispatch
+          nullable: true
+          enum:
+            - HATARI
+            - BINTANG
+            - COAL
+            - MINE SERVICES
+            - THIESS
+            - PAMA
+            - OTHER
+            - JUPITER
+            - MSD
+            - CPHD
+            - GEOLOGY
+            - MO
+            - DRILL & BLAST
+          example: COAL
+        lossFuel:
+          type: number
+          format: float
+          description: Summarize of fuel loss in Minecare (liter)
+          nullable: true
+          example: 4.87727775573731
+        lossTime:
+          type: integer
+          format: int64
+          description: Summarize of time loss in Minecare (minute)
+          nullable: true
+          example: 11
+    FuelTimeLossMonthSummary:
+      type: object
+      description:
+        This dataset union by summarized of loss fuel and loss hour each
+        months
+      properties:
+        dateYear:
+          type: integer
+          format: int32
+          description: Last date year
+          nullable: false
+          example: 2025
+        dateMonth:
+          type: string
+          maxLength: 24
+          description: Month name
+          nullable: false
+          example: January
+        lossFuel:
+          type: number
+          format: float
+          description: Summarize of fuel loss in Minecare (liter)
+          nullable: true
+          example: 905.504475092887
+        lossTime:
+          type: integer
+          format: int64
+          description: Summarize of time loss in Minecare (minute)
+          nullable: true
+          example: 2608
+    ErrorResponse:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+        error:
+          type: string
+        message:
+          type: string
+      required:
+        - statusCode
+        - error
+        - message
