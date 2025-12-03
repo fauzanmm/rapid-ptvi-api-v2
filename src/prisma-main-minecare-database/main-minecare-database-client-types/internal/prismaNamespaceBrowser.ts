@@ -51,8 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  FuelTimeLoss_1: 'FuelTimeLoss_1',
-  DatasetCycle: 'DatasetCycle'
+  fuelTimeLoss_1: 'fuelTimeLoss_1',
+  pitFuelTimeLossShift: 'pitFuelTimeLossShift',
+  pitFuelTimeLossCurrent: 'pitFuelTimeLossCurrent'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -86,80 +87,52 @@ export const FuelTimeLoss_1ScalarFieldEnum = {
 export type FuelTimeLoss_1ScalarFieldEnum = (typeof FuelTimeLoss_1ScalarFieldEnum)[keyof typeof FuelTimeLoss_1ScalarFieldEnum]
 
 
-export const DatasetCycleScalarFieldEnum = {
-  LoadID: 'LoadID',
+export const PitFuelTimeLossShiftScalarFieldEnum = {
+  RecordId: 'RecordId',
   ShiftId: 'ShiftId',
-  ShiftDate: 'ShiftDate',
-  Bin5Mins: 'Bin5Mins',
-  Bin15Mins: 'Bin15Mins',
-  Bin30Mins: 'Bin30Mins',
-  Bin60Mins: 'Bin60Mins',
-  LoadPit: 'LoadPit',
-  LoadRegion: 'LoadRegion',
-  LoadLocation: 'LoadLocation',
-  DumpLocation: 'DumpLocation',
-  ExcavID: 'ExcavID',
-  ExcavSize: 'ExcavSize',
-  ExcavType: 'ExcavType',
-  ExcavOperatorID: 'ExcavOperatorID',
-  ExcavDeptID: 'ExcavDeptID',
-  ExcavOwnerID: 'ExcavOwnerID',
-  TruckID: 'TruckID',
-  TruckSize: 'TruckSize',
-  TruckType: 'TruckType',
-  TruckOperatorID: 'TruckOperatorID',
-  TruckDeptID: 'TruckDeptID',
-  TruckOwnerID: 'TruckOwnerID',
-  AssignToFrontTimestamp: 'AssignToFrontTimestamp',
-  ExpctdEmptyTravelSec: 'ExpctdEmptyTravelSec',
-  EmptyTravDurationSec: 'EmptyTravDurationSec',
-  HangTimeSec: 'HangTimeSec',
-  ArriveAtFrontTimestamp: 'ArriveAtFrontTimestamp',
-  QueTimeSec: 'QueTimeSec',
-  SpottingTimestamp: 'SpottingTimestamp',
-  SpotTimeSec: 'SpotTimeSec',
-  LoadingTimestamp: 'LoadingTimestamp',
-  LoadingTimeSec: 'LoadingTimeSec',
-  FullTimestamp: 'FullTimestamp',
-  ExpctdFullTravelSec: 'ExpctdFullTravelSec',
-  FullTravDurationSec: 'FullTravDurationSec',
-  ArriveAtDumpTimestamp: 'ArriveAtDumpTimestamp',
-  DumpTimeSec: 'DumpTimeSec',
-  EmptyTimestamp: 'EmptyTimestamp',
-  TrucksInQueTimeFull: 'TrucksInQueTimeFull',
-  MaterialID: 'MaterialID',
-  EmptyDistKM: 'EmptyDistKM',
-  FullDistKM: 'FullDistKM',
-  FieldFirstDipper: 'FieldFirstDipper',
-  FieldLastDipper: 'FieldLastDipper',
-  TonsAtLoad: 'TonsAtLoad',
-  TonsAtDump: 'TonsAtDump',
-  TruckFactor: 'TruckFactor',
-  Elocked: 'Elocked',
-  DiffPass1: 'DiffPass1',
-  DiffPass2: 'DiffPass2',
-  DiffPass3: 'DiffPass3',
-  DiffPass4: 'DiffPass4',
-  DiffPass5: 'DiffPass5',
-  DiffPass6: 'DiffPass6',
-  DiffPass7: 'DiffPass7',
-  DiffPass8: 'DiffPass8',
-  DiffPass9: 'DiffPass9',
-  DiffPass10: 'DiffPass10',
-  DiffTime1: 'DiffTime1',
-  DiffTime2: 'DiffTime2',
-  DiffTime3: 'DiffTime3',
-  DiffTime4: 'DiffTime4',
-  DiffTime5: 'DiffTime5',
-  DiffTime6: 'DiffTime6',
-  DiffTime7: 'DiffTime7',
-  DiffTime8: 'DiffTime8',
-  DiffTime9: 'DiffTime9',
-  DiffTime10: 'DiffTime10',
-  FlagExtraload: 'FlagExtraload'
+  Equipment: 'Equipment',
+  Status: 'Status',
+  Reason: 'Reason',
+  Load: 'Load',
+  Location: 'Location',
+  UnitLoc: 'UnitLoc',
+  OperatorName: 'OperatorName',
+  Crew: 'Crew',
+  IdFuelRate: 'IdFuelRate',
+  FuelRate: 'FuelRate',
+  FuelLoss: 'FuelLoss',
+  TimeFuelRate: 'TimeFuelRate',
+  IdRPM: 'IdRPM',
+  RPM: 'RPM',
+  TimeRPM: 'TimeRPM',
+  RefreshTime: 'RefreshTime'
 } as const
 
-export type DatasetCycleScalarFieldEnum = (typeof DatasetCycleScalarFieldEnum)[keyof typeof DatasetCycleScalarFieldEnum]
+export type PitFuelTimeLossShiftScalarFieldEnum = (typeof PitFuelTimeLossShiftScalarFieldEnum)[keyof typeof PitFuelTimeLossShiftScalarFieldEnum]
+
+
+export const PitFuelTimeLossCurrentScalarFieldEnum = {
+  RecordId: 'RecordId',
+  ShiftId: 'ShiftId',
+  Equipment: 'Equipment',
+  Status: 'Status',
+  Reason: 'Reason',
+  Load: 'Load',
+  Location: 'Location',
+  UnitLoc: 'UnitLoc',
+  OperatorName: 'OperatorName',
+  Crew: 'Crew',
+  IdFuelRate: 'IdFuelRate',
+  FuelRate: 'FuelRate',
+  FuelLoss: 'FuelLoss',
+  TimeFuelRate: 'TimeFuelRate',
+  IdRPM: 'IdRPM',
+  RPM: 'RPM',
+  TimeRPM: 'TimeRPM',
+  RefreshTime: 'RefreshTime'
+} as const
+
+export type PitFuelTimeLossCurrentScalarFieldEnum = (typeof PitFuelTimeLossCurrentScalarFieldEnum)[keyof typeof PitFuelTimeLossCurrentScalarFieldEnum]
 
 
 export const SortOrder = {

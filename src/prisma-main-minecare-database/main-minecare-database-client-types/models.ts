@@ -8,6 +8,7 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/FuelTimeLoss_1.js'
-export type * from './models/DatasetCycle.js'
+export type * from './models/fuelTimeLoss_1.js'
+export type * from './models/pitFuelTimeLossShift.js'
+export type * from './models/pitFuelTimeLossCurrent.js'
 export type * from './commonInputTypes.js'

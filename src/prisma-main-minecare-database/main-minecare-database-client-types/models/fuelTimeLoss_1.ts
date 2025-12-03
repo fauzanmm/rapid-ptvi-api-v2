@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `FuelTimeLoss_1` model and its related types.
+ * This file exports the `fuelTimeLoss_1` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model FuelTimeLoss_1
+ * Model fuelTimeLoss_1
  * 
  */
-export type FuelTimeLoss_1Model = runtime.Types.Result.DefaultSelection<Prisma.$FuelTimeLoss_1Payload>
+export type fuelTimeLoss_1Model = runtime.Types.Result.DefaultSelection<Prisma.$fuelTimeLoss_1Payload>
 
 export type AggregateFuelTimeLoss_1 = {
   _count: FuelTimeLoss_1CountAggregateOutputType | null
@@ -125,37 +125,37 @@ export type FuelTimeLoss_1CountAggregateInputType = {
 
 export type FuelTimeLoss_1AggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which FuelTimeLoss_1 to aggregate.
+   * Filter which fuelTimeLoss_1 to aggregate.
    */
-  where?: Prisma.FuelTimeLoss_1WhereInput
+  where?: Prisma.fuelTimeLoss_1WhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of FuelTimeLoss_1s to fetch.
+   * Determine the order of fuelTimeLoss_1s to fetch.
    */
-  orderBy?: Prisma.FuelTimeLoss_1OrderByWithRelationInput | Prisma.FuelTimeLoss_1OrderByWithRelationInput[]
+  orderBy?: Prisma.fuelTimeLoss_1OrderByWithRelationInput | Prisma.fuelTimeLoss_1OrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.FuelTimeLoss_1WhereUniqueInput
+  cursor?: Prisma.fuelTimeLoss_1WhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` FuelTimeLoss_1s from the position of the cursor.
+   * Take `±n` fuelTimeLoss_1s from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` FuelTimeLoss_1s.
+   * Skip the first `n` fuelTimeLoss_1s.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned FuelTimeLoss_1s
+   * Count returned fuelTimeLoss_1s
   **/
   _count?: true | FuelTimeLoss_1CountAggregateInputType
   /**
@@ -195,11 +195,11 @@ export type GetFuelTimeLoss_1AggregateType<T extends FuelTimeLoss_1AggregateArgs
 
 
 
-export type FuelTimeLoss_1GroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.FuelTimeLoss_1WhereInput
-  orderBy?: Prisma.FuelTimeLoss_1OrderByWithAggregationInput | Prisma.FuelTimeLoss_1OrderByWithAggregationInput[]
+export type fuelTimeLoss_1GroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.fuelTimeLoss_1WhereInput
+  orderBy?: Prisma.fuelTimeLoss_1OrderByWithAggregationInput | Prisma.fuelTimeLoss_1OrderByWithAggregationInput[]
   by: Prisma.FuelTimeLoss_1ScalarFieldEnum[] | Prisma.FuelTimeLoss_1ScalarFieldEnum
-  having?: Prisma.FuelTimeLoss_1ScalarWhereWithAggregatesInput
+  having?: Prisma.fuelTimeLoss_1ScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: FuelTimeLoss_1CountAggregateInputType | true
@@ -225,7 +225,7 @@ export type FuelTimeLoss_1GroupByOutputType = {
   _max: FuelTimeLoss_1MaxAggregateOutputType | null
 }
 
-type GetFuelTimeLoss_1GroupByPayload<T extends FuelTimeLoss_1GroupByArgs> = Prisma.PrismaPromise<
+type GetFuelTimeLoss_1GroupByPayload<T extends fuelTimeLoss_1GroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<FuelTimeLoss_1GroupByOutputType, T['by']> &
       {
@@ -240,21 +240,21 @@ type GetFuelTimeLoss_1GroupByPayload<T extends FuelTimeLoss_1GroupByArgs> = Pris
 
 
 
-export type FuelTimeLoss_1WhereInput = {
-  AND?: Prisma.FuelTimeLoss_1WhereInput | Prisma.FuelTimeLoss_1WhereInput[]
-  OR?: Prisma.FuelTimeLoss_1WhereInput[]
-  NOT?: Prisma.FuelTimeLoss_1WhereInput | Prisma.FuelTimeLoss_1WhereInput[]
-  RecordId?: Prisma.IntFilter<"FuelTimeLoss_1"> | number
-  DateYear?: Prisma.IntNullableFilter<"FuelTimeLoss_1"> | number | null
-  DateMonth?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  OperatorName?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  Crew?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  Reason?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  LossFuel?: Prisma.FloatNullableFilter<"FuelTimeLoss_1"> | number | null
-  LossTime?: Prisma.FloatNullableFilter<"FuelTimeLoss_1"> | number | null
+export type fuelTimeLoss_1WhereInput = {
+  AND?: Prisma.fuelTimeLoss_1WhereInput | Prisma.fuelTimeLoss_1WhereInput[]
+  OR?: Prisma.fuelTimeLoss_1WhereInput[]
+  NOT?: Prisma.fuelTimeLoss_1WhereInput | Prisma.fuelTimeLoss_1WhereInput[]
+  RecordId?: Prisma.IntFilter<"fuelTimeLoss_1"> | number
+  DateYear?: Prisma.IntNullableFilter<"fuelTimeLoss_1"> | number | null
+  DateMonth?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  OperatorName?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  Crew?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  Reason?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  LossFuel?: Prisma.FloatNullableFilter<"fuelTimeLoss_1"> | number | null
+  LossTime?: Prisma.FloatNullableFilter<"fuelTimeLoss_1"> | number | null
 }
 
-export type FuelTimeLoss_1OrderByWithRelationInput = {
+export type fuelTimeLoss_1OrderByWithRelationInput = {
   RecordId?: Prisma.SortOrder
   DateYear?: Prisma.SortOrderInput | Prisma.SortOrder
   DateMonth?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -265,21 +265,21 @@ export type FuelTimeLoss_1OrderByWithRelationInput = {
   LossTime?: Prisma.SortOrderInput | Prisma.SortOrder
 }
 
-export type FuelTimeLoss_1WhereUniqueInput = Prisma.AtLeast<{
+export type fuelTimeLoss_1WhereUniqueInput = Prisma.AtLeast<{
   RecordId?: number
-  AND?: Prisma.FuelTimeLoss_1WhereInput | Prisma.FuelTimeLoss_1WhereInput[]
-  OR?: Prisma.FuelTimeLoss_1WhereInput[]
-  NOT?: Prisma.FuelTimeLoss_1WhereInput | Prisma.FuelTimeLoss_1WhereInput[]
-  DateYear?: Prisma.IntNullableFilter<"FuelTimeLoss_1"> | number | null
-  DateMonth?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  OperatorName?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  Crew?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  Reason?: Prisma.StringNullableFilter<"FuelTimeLoss_1"> | string | null
-  LossFuel?: Prisma.FloatNullableFilter<"FuelTimeLoss_1"> | number | null
-  LossTime?: Prisma.FloatNullableFilter<"FuelTimeLoss_1"> | number | null
+  AND?: Prisma.fuelTimeLoss_1WhereInput | Prisma.fuelTimeLoss_1WhereInput[]
+  OR?: Prisma.fuelTimeLoss_1WhereInput[]
+  NOT?: Prisma.fuelTimeLoss_1WhereInput | Prisma.fuelTimeLoss_1WhereInput[]
+  DateYear?: Prisma.IntNullableFilter<"fuelTimeLoss_1"> | number | null
+  DateMonth?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  OperatorName?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  Crew?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  Reason?: Prisma.StringNullableFilter<"fuelTimeLoss_1"> | string | null
+  LossFuel?: Prisma.FloatNullableFilter<"fuelTimeLoss_1"> | number | null
+  LossTime?: Prisma.FloatNullableFilter<"fuelTimeLoss_1"> | number | null
 }, "RecordId">
 
-export type FuelTimeLoss_1OrderByWithAggregationInput = {
+export type fuelTimeLoss_1OrderByWithAggregationInput = {
   RecordId?: Prisma.SortOrder
   DateYear?: Prisma.SortOrderInput | Prisma.SortOrder
   DateMonth?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -288,28 +288,28 @@ export type FuelTimeLoss_1OrderByWithAggregationInput = {
   Reason?: Prisma.SortOrderInput | Prisma.SortOrder
   LossFuel?: Prisma.SortOrderInput | Prisma.SortOrder
   LossTime?: Prisma.SortOrderInput | Prisma.SortOrder
-  _count?: Prisma.FuelTimeLoss_1CountOrderByAggregateInput
-  _avg?: Prisma.FuelTimeLoss_1AvgOrderByAggregateInput
-  _max?: Prisma.FuelTimeLoss_1MaxOrderByAggregateInput
-  _min?: Prisma.FuelTimeLoss_1MinOrderByAggregateInput
-  _sum?: Prisma.FuelTimeLoss_1SumOrderByAggregateInput
+  _count?: Prisma.fuelTimeLoss_1CountOrderByAggregateInput
+  _avg?: Prisma.fuelTimeLoss_1AvgOrderByAggregateInput
+  _max?: Prisma.fuelTimeLoss_1MaxOrderByAggregateInput
+  _min?: Prisma.fuelTimeLoss_1MinOrderByAggregateInput
+  _sum?: Prisma.fuelTimeLoss_1SumOrderByAggregateInput
 }
 
-export type FuelTimeLoss_1ScalarWhereWithAggregatesInput = {
-  AND?: Prisma.FuelTimeLoss_1ScalarWhereWithAggregatesInput | Prisma.FuelTimeLoss_1ScalarWhereWithAggregatesInput[]
-  OR?: Prisma.FuelTimeLoss_1ScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.FuelTimeLoss_1ScalarWhereWithAggregatesInput | Prisma.FuelTimeLoss_1ScalarWhereWithAggregatesInput[]
-  RecordId?: Prisma.IntWithAggregatesFilter<"FuelTimeLoss_1"> | number
-  DateYear?: Prisma.IntNullableWithAggregatesFilter<"FuelTimeLoss_1"> | number | null
-  DateMonth?: Prisma.StringNullableWithAggregatesFilter<"FuelTimeLoss_1"> | string | null
-  OperatorName?: Prisma.StringNullableWithAggregatesFilter<"FuelTimeLoss_1"> | string | null
-  Crew?: Prisma.StringNullableWithAggregatesFilter<"FuelTimeLoss_1"> | string | null
-  Reason?: Prisma.StringNullableWithAggregatesFilter<"FuelTimeLoss_1"> | string | null
-  LossFuel?: Prisma.FloatNullableWithAggregatesFilter<"FuelTimeLoss_1"> | number | null
-  LossTime?: Prisma.FloatNullableWithAggregatesFilter<"FuelTimeLoss_1"> | number | null
+export type fuelTimeLoss_1ScalarWhereWithAggregatesInput = {
+  AND?: Prisma.fuelTimeLoss_1ScalarWhereWithAggregatesInput | Prisma.fuelTimeLoss_1ScalarWhereWithAggregatesInput[]
+  OR?: Prisma.fuelTimeLoss_1ScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.fuelTimeLoss_1ScalarWhereWithAggregatesInput | Prisma.fuelTimeLoss_1ScalarWhereWithAggregatesInput[]
+  RecordId?: Prisma.IntWithAggregatesFilter<"fuelTimeLoss_1"> | number
+  DateYear?: Prisma.IntNullableWithAggregatesFilter<"fuelTimeLoss_1"> | number | null
+  DateMonth?: Prisma.StringNullableWithAggregatesFilter<"fuelTimeLoss_1"> | string | null
+  OperatorName?: Prisma.StringNullableWithAggregatesFilter<"fuelTimeLoss_1"> | string | null
+  Crew?: Prisma.StringNullableWithAggregatesFilter<"fuelTimeLoss_1"> | string | null
+  Reason?: Prisma.StringNullableWithAggregatesFilter<"fuelTimeLoss_1"> | string | null
+  LossFuel?: Prisma.FloatNullableWithAggregatesFilter<"fuelTimeLoss_1"> | number | null
+  LossTime?: Prisma.FloatNullableWithAggregatesFilter<"fuelTimeLoss_1"> | number | null
 }
 
-export type FuelTimeLoss_1CreateInput = {
+export type fuelTimeLoss_1CreateInput = {
   DateYear?: number | null
   DateMonth?: string | null
   OperatorName?: string | null
@@ -319,7 +319,7 @@ export type FuelTimeLoss_1CreateInput = {
   LossTime?: number | null
 }
 
-export type FuelTimeLoss_1UncheckedCreateInput = {
+export type fuelTimeLoss_1UncheckedCreateInput = {
   RecordId?: number
   DateYear?: number | null
   DateMonth?: string | null
@@ -330,7 +330,7 @@ export type FuelTimeLoss_1UncheckedCreateInput = {
   LossTime?: number | null
 }
 
-export type FuelTimeLoss_1UpdateInput = {
+export type fuelTimeLoss_1UpdateInput = {
   DateYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   DateMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   OperatorName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -340,7 +340,7 @@ export type FuelTimeLoss_1UpdateInput = {
   LossTime?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
 }
 
-export type FuelTimeLoss_1UncheckedUpdateInput = {
+export type fuelTimeLoss_1UncheckedUpdateInput = {
   RecordId?: Prisma.IntFieldUpdateOperationsInput | number
   DateYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   DateMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -351,7 +351,7 @@ export type FuelTimeLoss_1UncheckedUpdateInput = {
   LossTime?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
 }
 
-export type FuelTimeLoss_1CreateManyInput = {
+export type fuelTimeLoss_1CreateManyInput = {
   DateYear?: number | null
   DateMonth?: string | null
   OperatorName?: string | null
@@ -361,7 +361,7 @@ export type FuelTimeLoss_1CreateManyInput = {
   LossTime?: number | null
 }
 
-export type FuelTimeLoss_1UpdateManyMutationInput = {
+export type fuelTimeLoss_1UpdateManyMutationInput = {
   DateYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   DateMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   OperatorName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -371,7 +371,7 @@ export type FuelTimeLoss_1UpdateManyMutationInput = {
   LossTime?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
 }
 
-export type FuelTimeLoss_1UncheckedUpdateManyInput = {
+export type fuelTimeLoss_1UncheckedUpdateManyInput = {
   RecordId?: Prisma.IntFieldUpdateOperationsInput | number
   DateYear?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   DateMonth?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -382,7 +382,7 @@ export type FuelTimeLoss_1UncheckedUpdateManyInput = {
   LossTime?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
 }
 
-export type FuelTimeLoss_1CountOrderByAggregateInput = {
+export type fuelTimeLoss_1CountOrderByAggregateInput = {
   RecordId?: Prisma.SortOrder
   DateYear?: Prisma.SortOrder
   DateMonth?: Prisma.SortOrder
@@ -393,25 +393,14 @@ export type FuelTimeLoss_1CountOrderByAggregateInput = {
   LossTime?: Prisma.SortOrder
 }
 
-export type FuelTimeLoss_1AvgOrderByAggregateInput = {
+export type fuelTimeLoss_1AvgOrderByAggregateInput = {
   RecordId?: Prisma.SortOrder
   DateYear?: Prisma.SortOrder
   LossFuel?: Prisma.SortOrder
   LossTime?: Prisma.SortOrder
 }
 
-export type FuelTimeLoss_1MaxOrderByAggregateInput = {
-  RecordId?: Prisma.SortOrder
-  DateYear?: Prisma.SortOrder
-  DateMonth?: Prisma.SortOrder
-  OperatorName?: Prisma.SortOrder
-  Crew?: Prisma.SortOrder
-  Reason?: Prisma.SortOrder
-  LossFuel?: Prisma.SortOrder
-  LossTime?: Prisma.SortOrder
-}
-
-export type FuelTimeLoss_1MinOrderByAggregateInput = {
+export type fuelTimeLoss_1MaxOrderByAggregateInput = {
   RecordId?: Prisma.SortOrder
   DateYear?: Prisma.SortOrder
   DateMonth?: Prisma.SortOrder
@@ -422,7 +411,18 @@ export type FuelTimeLoss_1MinOrderByAggregateInput = {
   LossTime?: Prisma.SortOrder
 }
 
-export type FuelTimeLoss_1SumOrderByAggregateInput = {
+export type fuelTimeLoss_1MinOrderByAggregateInput = {
+  RecordId?: Prisma.SortOrder
+  DateYear?: Prisma.SortOrder
+  DateMonth?: Prisma.SortOrder
+  OperatorName?: Prisma.SortOrder
+  Crew?: Prisma.SortOrder
+  Reason?: Prisma.SortOrder
+  LossFuel?: Prisma.SortOrder
+  LossTime?: Prisma.SortOrder
+}
+
+export type fuelTimeLoss_1SumOrderByAggregateInput = {
   RecordId?: Prisma.SortOrder
   DateYear?: Prisma.SortOrder
   LossFuel?: Prisma.SortOrder
@@ -459,7 +459,7 @@ export type IntFieldUpdateOperationsInput = {
 
 
 
-export type FuelTimeLoss_1Select<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type fuelTimeLoss_1Select<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   RecordId?: boolean
   DateYear?: boolean
   DateMonth?: boolean
@@ -472,7 +472,7 @@ export type FuelTimeLoss_1Select<ExtArgs extends runtime.Types.Extensions.Intern
 
 
 
-export type FuelTimeLoss_1SelectScalar = {
+export type fuelTimeLoss_1SelectScalar = {
   RecordId?: boolean
   DateYear?: boolean
   DateMonth?: boolean
@@ -483,10 +483,10 @@ export type FuelTimeLoss_1SelectScalar = {
   LossTime?: boolean
 }
 
-export type FuelTimeLoss_1Omit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"RecordId" | "DateYear" | "DateMonth" | "OperatorName" | "Crew" | "Reason" | "LossFuel" | "LossTime", ExtArgs["result"]["fuelTimeLoss_1"]>
+export type fuelTimeLoss_1Omit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"RecordId" | "DateYear" | "DateMonth" | "OperatorName" | "Crew" | "Reason" | "LossFuel" | "LossTime", ExtArgs["result"]["fuelTimeLoss_1"]>
 
-export type $FuelTimeLoss_1Payload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "FuelTimeLoss_1"
+export type $fuelTimeLoss_1Payload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "fuelTimeLoss_1"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     RecordId: number
@@ -501,18 +501,18 @@ export type $FuelTimeLoss_1Payload<ExtArgs extends runtime.Types.Extensions.Inte
   composites: {}
 }
 
-export type FuelTimeLoss_1GetPayload<S extends boolean | null | undefined | FuelTimeLoss_1DefaultArgs> = runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload, S>
+export type fuelTimeLoss_1GetPayload<S extends boolean | null | undefined | fuelTimeLoss_1DefaultArgs> = runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload, S>
 
-export type FuelTimeLoss_1CountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<FuelTimeLoss_1FindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type fuelTimeLoss_1CountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<fuelTimeLoss_1FindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: FuelTimeLoss_1CountAggregateInputType | true
   }
 
-export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FuelTimeLoss_1'], meta: { name: 'FuelTimeLoss_1' } }
+export interface fuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['fuelTimeLoss_1'], meta: { name: 'fuelTimeLoss_1' } }
   /**
    * Find zero or one FuelTimeLoss_1 that matches the filter.
-   * @param {FuelTimeLoss_1FindUniqueArgs} args - Arguments to find a FuelTimeLoss_1
+   * @param {fuelTimeLoss_1FindUniqueArgs} args - Arguments to find a FuelTimeLoss_1
    * @example
    * // Get one FuelTimeLoss_1
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.findUnique({
@@ -521,12 +521,12 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findUnique<T extends FuelTimeLoss_1FindUniqueArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1FindUniqueArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends fuelTimeLoss_1FindUniqueArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1FindUniqueArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one FuelTimeLoss_1 that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {FuelTimeLoss_1FindUniqueOrThrowArgs} args - Arguments to find a FuelTimeLoss_1
+   * @param {fuelTimeLoss_1FindUniqueOrThrowArgs} args - Arguments to find a FuelTimeLoss_1
    * @example
    * // Get one FuelTimeLoss_1
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.findUniqueOrThrow({
@@ -535,13 +535,13 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findUniqueOrThrow<T extends FuelTimeLoss_1FindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1FindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends fuelTimeLoss_1FindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1FindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first FuelTimeLoss_1 that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {FuelTimeLoss_1FindFirstArgs} args - Arguments to find a FuelTimeLoss_1
+   * @param {fuelTimeLoss_1FindFirstArgs} args - Arguments to find a FuelTimeLoss_1
    * @example
    * // Get one FuelTimeLoss_1
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.findFirst({
@@ -550,14 +550,14 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findFirst<T extends FuelTimeLoss_1FindFirstArgs>(args?: Prisma.SelectSubset<T, FuelTimeLoss_1FindFirstArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends fuelTimeLoss_1FindFirstArgs>(args?: Prisma.SelectSubset<T, fuelTimeLoss_1FindFirstArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first FuelTimeLoss_1 that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {FuelTimeLoss_1FindFirstOrThrowArgs} args - Arguments to find a FuelTimeLoss_1
+   * @param {fuelTimeLoss_1FindFirstOrThrowArgs} args - Arguments to find a FuelTimeLoss_1
    * @example
    * // Get one FuelTimeLoss_1
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.findFirstOrThrow({
@@ -566,13 +566,13 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findFirstOrThrow<T extends FuelTimeLoss_1FindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, FuelTimeLoss_1FindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends fuelTimeLoss_1FindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, fuelTimeLoss_1FindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more FuelTimeLoss_1s that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {FuelTimeLoss_1FindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {fuelTimeLoss_1FindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all FuelTimeLoss_1s
    * const fuelTimeLoss_1s = await prisma.fuelTimeLoss_1.findMany()
@@ -584,11 +584,11 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * const fuelTimeLoss_1WithRecordIdOnly = await prisma.fuelTimeLoss_1.findMany({ select: { RecordId: true } })
    * 
    */
-  findMany<T extends FuelTimeLoss_1FindManyArgs>(args?: Prisma.SelectSubset<T, FuelTimeLoss_1FindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends fuelTimeLoss_1FindManyArgs>(args?: Prisma.SelectSubset<T, fuelTimeLoss_1FindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a FuelTimeLoss_1.
-   * @param {FuelTimeLoss_1CreateArgs} args - Arguments to create a FuelTimeLoss_1.
+   * @param {fuelTimeLoss_1CreateArgs} args - Arguments to create a FuelTimeLoss_1.
    * @example
    * // Create one FuelTimeLoss_1
    * const FuelTimeLoss_1 = await prisma.fuelTimeLoss_1.create({
@@ -598,11 +598,11 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  create<T extends FuelTimeLoss_1CreateArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1CreateArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends fuelTimeLoss_1CreateArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1CreateArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many FuelTimeLoss_1s.
-   * @param {FuelTimeLoss_1CreateManyArgs} args - Arguments to create many FuelTimeLoss_1s.
+   * @param {fuelTimeLoss_1CreateManyArgs} args - Arguments to create many FuelTimeLoss_1s.
    * @example
    * // Create many FuelTimeLoss_1s
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.createMany({
@@ -612,11 +612,11 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * })
    *     
    */
-  createMany<T extends FuelTimeLoss_1CreateManyArgs>(args?: Prisma.SelectSubset<T, FuelTimeLoss_1CreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends fuelTimeLoss_1CreateManyArgs>(args?: Prisma.SelectSubset<T, fuelTimeLoss_1CreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a FuelTimeLoss_1.
-   * @param {FuelTimeLoss_1DeleteArgs} args - Arguments to delete one FuelTimeLoss_1.
+   * @param {fuelTimeLoss_1DeleteArgs} args - Arguments to delete one FuelTimeLoss_1.
    * @example
    * // Delete one FuelTimeLoss_1
    * const FuelTimeLoss_1 = await prisma.fuelTimeLoss_1.delete({
@@ -626,11 +626,11 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  delete<T extends FuelTimeLoss_1DeleteArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1DeleteArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends fuelTimeLoss_1DeleteArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1DeleteArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one FuelTimeLoss_1.
-   * @param {FuelTimeLoss_1UpdateArgs} args - Arguments to update one FuelTimeLoss_1.
+   * @param {fuelTimeLoss_1UpdateArgs} args - Arguments to update one FuelTimeLoss_1.
    * @example
    * // Update one FuelTimeLoss_1
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.update({
@@ -643,11 +643,11 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  update<T extends FuelTimeLoss_1UpdateArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1UpdateArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends fuelTimeLoss_1UpdateArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1UpdateArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more FuelTimeLoss_1s.
-   * @param {FuelTimeLoss_1DeleteManyArgs} args - Arguments to filter FuelTimeLoss_1s to delete.
+   * @param {fuelTimeLoss_1DeleteManyArgs} args - Arguments to filter FuelTimeLoss_1s to delete.
    * @example
    * // Delete a few FuelTimeLoss_1s
    * const { count } = await prisma.fuelTimeLoss_1.deleteMany({
@@ -657,13 +657,13 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  deleteMany<T extends FuelTimeLoss_1DeleteManyArgs>(args?: Prisma.SelectSubset<T, FuelTimeLoss_1DeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends fuelTimeLoss_1DeleteManyArgs>(args?: Prisma.SelectSubset<T, fuelTimeLoss_1DeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more FuelTimeLoss_1s.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {FuelTimeLoss_1UpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {fuelTimeLoss_1UpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many FuelTimeLoss_1s
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.updateMany({
@@ -676,11 +676,11 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  updateMany<T extends FuelTimeLoss_1UpdateManyArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1UpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends fuelTimeLoss_1UpdateManyArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1UpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one FuelTimeLoss_1.
-   * @param {FuelTimeLoss_1UpsertArgs} args - Arguments to update or create a FuelTimeLoss_1.
+   * @param {fuelTimeLoss_1UpsertArgs} args - Arguments to update or create a FuelTimeLoss_1.
    * @example
    * // Update or create a FuelTimeLoss_1
    * const fuelTimeLoss_1 = await prisma.fuelTimeLoss_1.upsert({
@@ -695,14 +695,14 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  upsert<T extends FuelTimeLoss_1UpsertArgs>(args: Prisma.SelectSubset<T, FuelTimeLoss_1UpsertArgs<ExtArgs>>): Prisma.Prisma__FuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$FuelTimeLoss_1Payload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends fuelTimeLoss_1UpsertArgs>(args: Prisma.SelectSubset<T, fuelTimeLoss_1UpsertArgs<ExtArgs>>): Prisma.Prisma__fuelTimeLoss_1Client<runtime.Types.Result.GetResult<Prisma.$fuelTimeLoss_1Payload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of FuelTimeLoss_1s.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {FuelTimeLoss_1CountArgs} args - Arguments to filter FuelTimeLoss_1s to count.
+   * @param {fuelTimeLoss_1CountArgs} args - Arguments to filter FuelTimeLoss_1s to count.
    * @example
    * // Count the number of FuelTimeLoss_1s
    * const count = await prisma.fuelTimeLoss_1.count({
@@ -711,8 +711,8 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
   **/
-  count<T extends FuelTimeLoss_1CountArgs>(
-    args?: Prisma.Subset<T, FuelTimeLoss_1CountArgs>,
+  count<T extends fuelTimeLoss_1CountArgs>(
+    args?: Prisma.Subset<T, fuelTimeLoss_1CountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -751,7 +751,7 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * Group by FuelTimeLoss_1.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {FuelTimeLoss_1GroupByArgs} args - Group by arguments.
+   * @param {fuelTimeLoss_1GroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -766,14 +766,14 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
    * 
   **/
   groupBy<
-    T extends FuelTimeLoss_1GroupByArgs,
+    T extends fuelTimeLoss_1GroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: FuelTimeLoss_1GroupByArgs['orderBy'] }
-      : { orderBy?: FuelTimeLoss_1GroupByArgs['orderBy'] },
+      ? { orderBy: fuelTimeLoss_1GroupByArgs['orderBy'] }
+      : { orderBy?: fuelTimeLoss_1GroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -822,20 +822,20 @@ export interface FuelTimeLoss_1Delegate<ExtArgs extends runtime.Types.Extensions
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, FuelTimeLoss_1GroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFuelTimeLoss_1GroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, fuelTimeLoss_1GroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFuelTimeLoss_1GroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the FuelTimeLoss_1 model
+ * Fields of the fuelTimeLoss_1 model
  */
-readonly fields: FuelTimeLoss_1FieldRefs;
+readonly fields: fuelTimeLoss_1FieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for FuelTimeLoss_1.
+ * The delegate class that acts as a "Promise-like" for fuelTimeLoss_1.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__FuelTimeLoss_1Client<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__fuelTimeLoss_1Client<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -863,332 +863,332 @@ export interface Prisma__FuelTimeLoss_1Client<T, Null = never, ExtArgs extends r
 
 
 /**
- * Fields of the FuelTimeLoss_1 model
+ * Fields of the fuelTimeLoss_1 model
  */
-export interface FuelTimeLoss_1FieldRefs {
-  readonly RecordId: Prisma.FieldRef<"FuelTimeLoss_1", 'Int'>
-  readonly DateYear: Prisma.FieldRef<"FuelTimeLoss_1", 'Int'>
-  readonly DateMonth: Prisma.FieldRef<"FuelTimeLoss_1", 'String'>
-  readonly OperatorName: Prisma.FieldRef<"FuelTimeLoss_1", 'String'>
-  readonly Crew: Prisma.FieldRef<"FuelTimeLoss_1", 'String'>
-  readonly Reason: Prisma.FieldRef<"FuelTimeLoss_1", 'String'>
-  readonly LossFuel: Prisma.FieldRef<"FuelTimeLoss_1", 'Float'>
-  readonly LossTime: Prisma.FieldRef<"FuelTimeLoss_1", 'Float'>
+export interface fuelTimeLoss_1FieldRefs {
+  readonly RecordId: Prisma.FieldRef<"fuelTimeLoss_1", 'Int'>
+  readonly DateYear: Prisma.FieldRef<"fuelTimeLoss_1", 'Int'>
+  readonly DateMonth: Prisma.FieldRef<"fuelTimeLoss_1", 'String'>
+  readonly OperatorName: Prisma.FieldRef<"fuelTimeLoss_1", 'String'>
+  readonly Crew: Prisma.FieldRef<"fuelTimeLoss_1", 'String'>
+  readonly Reason: Prisma.FieldRef<"fuelTimeLoss_1", 'String'>
+  readonly LossFuel: Prisma.FieldRef<"fuelTimeLoss_1", 'Float'>
+  readonly LossTime: Prisma.FieldRef<"fuelTimeLoss_1", 'Float'>
 }
     
 
 // Custom InputTypes
 /**
- * FuelTimeLoss_1 findUnique
+ * fuelTimeLoss_1 findUnique
  */
-export type FuelTimeLoss_1FindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1FindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * Filter, which FuelTimeLoss_1 to fetch.
+   * Filter, which fuelTimeLoss_1 to fetch.
    */
-  where: Prisma.FuelTimeLoss_1WhereUniqueInput
+  where: Prisma.fuelTimeLoss_1WhereUniqueInput
 }
 
 /**
- * FuelTimeLoss_1 findUniqueOrThrow
+ * fuelTimeLoss_1 findUniqueOrThrow
  */
-export type FuelTimeLoss_1FindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1FindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * Filter, which FuelTimeLoss_1 to fetch.
+   * Filter, which fuelTimeLoss_1 to fetch.
    */
-  where: Prisma.FuelTimeLoss_1WhereUniqueInput
+  where: Prisma.fuelTimeLoss_1WhereUniqueInput
 }
 
 /**
- * FuelTimeLoss_1 findFirst
+ * fuelTimeLoss_1 findFirst
  */
-export type FuelTimeLoss_1FindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1FindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * Filter, which FuelTimeLoss_1 to fetch.
+   * Filter, which fuelTimeLoss_1 to fetch.
    */
-  where?: Prisma.FuelTimeLoss_1WhereInput
+  where?: Prisma.fuelTimeLoss_1WhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of FuelTimeLoss_1s to fetch.
+   * Determine the order of fuelTimeLoss_1s to fetch.
    */
-  orderBy?: Prisma.FuelTimeLoss_1OrderByWithRelationInput | Prisma.FuelTimeLoss_1OrderByWithRelationInput[]
+  orderBy?: Prisma.fuelTimeLoss_1OrderByWithRelationInput | Prisma.fuelTimeLoss_1OrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for FuelTimeLoss_1s.
+   * Sets the position for searching for fuelTimeLoss_1s.
    */
-  cursor?: Prisma.FuelTimeLoss_1WhereUniqueInput
+  cursor?: Prisma.fuelTimeLoss_1WhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` FuelTimeLoss_1s from the position of the cursor.
+   * Take `±n` fuelTimeLoss_1s from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` FuelTimeLoss_1s.
+   * Skip the first `n` fuelTimeLoss_1s.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of FuelTimeLoss_1s.
+   * Filter by unique combinations of fuelTimeLoss_1s.
    */
   distinct?: Prisma.FuelTimeLoss_1ScalarFieldEnum | Prisma.FuelTimeLoss_1ScalarFieldEnum[]
 }
 
 /**
- * FuelTimeLoss_1 findFirstOrThrow
+ * fuelTimeLoss_1 findFirstOrThrow
  */
-export type FuelTimeLoss_1FindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1FindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * Filter, which FuelTimeLoss_1 to fetch.
+   * Filter, which fuelTimeLoss_1 to fetch.
    */
-  where?: Prisma.FuelTimeLoss_1WhereInput
+  where?: Prisma.fuelTimeLoss_1WhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of FuelTimeLoss_1s to fetch.
+   * Determine the order of fuelTimeLoss_1s to fetch.
    */
-  orderBy?: Prisma.FuelTimeLoss_1OrderByWithRelationInput | Prisma.FuelTimeLoss_1OrderByWithRelationInput[]
+  orderBy?: Prisma.fuelTimeLoss_1OrderByWithRelationInput | Prisma.fuelTimeLoss_1OrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for FuelTimeLoss_1s.
+   * Sets the position for searching for fuelTimeLoss_1s.
    */
-  cursor?: Prisma.FuelTimeLoss_1WhereUniqueInput
+  cursor?: Prisma.fuelTimeLoss_1WhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` FuelTimeLoss_1s from the position of the cursor.
+   * Take `±n` fuelTimeLoss_1s from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` FuelTimeLoss_1s.
+   * Skip the first `n` fuelTimeLoss_1s.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of FuelTimeLoss_1s.
+   * Filter by unique combinations of fuelTimeLoss_1s.
    */
   distinct?: Prisma.FuelTimeLoss_1ScalarFieldEnum | Prisma.FuelTimeLoss_1ScalarFieldEnum[]
 }
 
 /**
- * FuelTimeLoss_1 findMany
+ * fuelTimeLoss_1 findMany
  */
-export type FuelTimeLoss_1FindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1FindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * Filter, which FuelTimeLoss_1s to fetch.
+   * Filter, which fuelTimeLoss_1s to fetch.
    */
-  where?: Prisma.FuelTimeLoss_1WhereInput
+  where?: Prisma.fuelTimeLoss_1WhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of FuelTimeLoss_1s to fetch.
+   * Determine the order of fuelTimeLoss_1s to fetch.
    */
-  orderBy?: Prisma.FuelTimeLoss_1OrderByWithRelationInput | Prisma.FuelTimeLoss_1OrderByWithRelationInput[]
+  orderBy?: Prisma.fuelTimeLoss_1OrderByWithRelationInput | Prisma.fuelTimeLoss_1OrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing FuelTimeLoss_1s.
+   * Sets the position for listing fuelTimeLoss_1s.
    */
-  cursor?: Prisma.FuelTimeLoss_1WhereUniqueInput
+  cursor?: Prisma.fuelTimeLoss_1WhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` FuelTimeLoss_1s from the position of the cursor.
+   * Take `±n` fuelTimeLoss_1s from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` FuelTimeLoss_1s.
+   * Skip the first `n` fuelTimeLoss_1s.
    */
   skip?: number
   distinct?: Prisma.FuelTimeLoss_1ScalarFieldEnum | Prisma.FuelTimeLoss_1ScalarFieldEnum[]
 }
 
 /**
- * FuelTimeLoss_1 create
+ * fuelTimeLoss_1 create
  */
-export type FuelTimeLoss_1CreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1CreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * The data needed to create a FuelTimeLoss_1.
+   * The data needed to create a fuelTimeLoss_1.
    */
-  data?: Prisma.XOR<Prisma.FuelTimeLoss_1CreateInput, Prisma.FuelTimeLoss_1UncheckedCreateInput>
+  data?: Prisma.XOR<Prisma.fuelTimeLoss_1CreateInput, Prisma.fuelTimeLoss_1UncheckedCreateInput>
 }
 
 /**
- * FuelTimeLoss_1 createMany
+ * fuelTimeLoss_1 createMany
  */
-export type FuelTimeLoss_1CreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1CreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many FuelTimeLoss_1s.
+   * The data used to create many fuelTimeLoss_1s.
    */
-  data: Prisma.FuelTimeLoss_1CreateManyInput | Prisma.FuelTimeLoss_1CreateManyInput[]
+  data: Prisma.fuelTimeLoss_1CreateManyInput | Prisma.fuelTimeLoss_1CreateManyInput[]
 }
 
 /**
- * FuelTimeLoss_1 update
+ * fuelTimeLoss_1 update
  */
-export type FuelTimeLoss_1UpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1UpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * The data needed to update a FuelTimeLoss_1.
+   * The data needed to update a fuelTimeLoss_1.
    */
-  data: Prisma.XOR<Prisma.FuelTimeLoss_1UpdateInput, Prisma.FuelTimeLoss_1UncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.fuelTimeLoss_1UpdateInput, Prisma.fuelTimeLoss_1UncheckedUpdateInput>
   /**
-   * Choose, which FuelTimeLoss_1 to update.
+   * Choose, which fuelTimeLoss_1 to update.
    */
-  where: Prisma.FuelTimeLoss_1WhereUniqueInput
+  where: Prisma.fuelTimeLoss_1WhereUniqueInput
 }
 
 /**
- * FuelTimeLoss_1 updateMany
+ * fuelTimeLoss_1 updateMany
  */
-export type FuelTimeLoss_1UpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1UpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update FuelTimeLoss_1s.
+   * The data used to update fuelTimeLoss_1s.
    */
-  data: Prisma.XOR<Prisma.FuelTimeLoss_1UpdateManyMutationInput, Prisma.FuelTimeLoss_1UncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.fuelTimeLoss_1UpdateManyMutationInput, Prisma.fuelTimeLoss_1UncheckedUpdateManyInput>
   /**
-   * Filter which FuelTimeLoss_1s to update
+   * Filter which fuelTimeLoss_1s to update
    */
-  where?: Prisma.FuelTimeLoss_1WhereInput
+  where?: Prisma.fuelTimeLoss_1WhereInput
   /**
-   * Limit how many FuelTimeLoss_1s to update.
+   * Limit how many fuelTimeLoss_1s to update.
    */
   limit?: number
 }
 
 /**
- * FuelTimeLoss_1 upsert
+ * fuelTimeLoss_1 upsert
  */
-export type FuelTimeLoss_1UpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1UpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * The filter to search for the FuelTimeLoss_1 to update in case it exists.
+   * The filter to search for the fuelTimeLoss_1 to update in case it exists.
    */
-  where: Prisma.FuelTimeLoss_1WhereUniqueInput
+  where: Prisma.fuelTimeLoss_1WhereUniqueInput
   /**
-   * In case the FuelTimeLoss_1 found by the `where` argument doesn't exist, create a new FuelTimeLoss_1 with this data.
+   * In case the fuelTimeLoss_1 found by the `where` argument doesn't exist, create a new fuelTimeLoss_1 with this data.
    */
-  create: Prisma.XOR<Prisma.FuelTimeLoss_1CreateInput, Prisma.FuelTimeLoss_1UncheckedCreateInput>
+  create: Prisma.XOR<Prisma.fuelTimeLoss_1CreateInput, Prisma.fuelTimeLoss_1UncheckedCreateInput>
   /**
-   * In case the FuelTimeLoss_1 was found with the provided `where` argument, update it with this data.
+   * In case the fuelTimeLoss_1 was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.FuelTimeLoss_1UpdateInput, Prisma.FuelTimeLoss_1UncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.fuelTimeLoss_1UpdateInput, Prisma.fuelTimeLoss_1UncheckedUpdateInput>
 }
 
 /**
- * FuelTimeLoss_1 delete
+ * fuelTimeLoss_1 delete
  */
-export type FuelTimeLoss_1DeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1DeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
   /**
-   * Filter which FuelTimeLoss_1 to delete.
+   * Filter which fuelTimeLoss_1 to delete.
    */
-  where: Prisma.FuelTimeLoss_1WhereUniqueInput
+  where: Prisma.fuelTimeLoss_1WhereUniqueInput
 }
 
 /**
- * FuelTimeLoss_1 deleteMany
+ * fuelTimeLoss_1 deleteMany
  */
-export type FuelTimeLoss_1DeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1DeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which FuelTimeLoss_1s to delete
+   * Filter which fuelTimeLoss_1s to delete
    */
-  where?: Prisma.FuelTimeLoss_1WhereInput
+  where?: Prisma.fuelTimeLoss_1WhereInput
   /**
-   * Limit how many FuelTimeLoss_1s to delete.
+   * Limit how many fuelTimeLoss_1s to delete.
    */
   limit?: number
 }
 
 /**
- * FuelTimeLoss_1 without action
+ * fuelTimeLoss_1 without action
  */
-export type FuelTimeLoss_1DefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type fuelTimeLoss_1DefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the FuelTimeLoss_1
+   * Select specific fields to fetch from the fuelTimeLoss_1
    */
-  select?: Prisma.FuelTimeLoss_1Select<ExtArgs> | null
+  select?: Prisma.fuelTimeLoss_1Select<ExtArgs> | null
   /**
-   * Omit specific fields from the FuelTimeLoss_1
+   * Omit specific fields from the fuelTimeLoss_1
    */
-  omit?: Prisma.FuelTimeLoss_1Omit<ExtArgs> | null
+  omit?: Prisma.fuelTimeLoss_1Omit<ExtArgs> | null
 }

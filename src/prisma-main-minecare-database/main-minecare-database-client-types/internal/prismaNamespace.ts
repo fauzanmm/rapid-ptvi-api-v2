@@ -384,8 +384,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  FuelTimeLoss_1: 'FuelTimeLoss_1',
-  DatasetCycle: 'DatasetCycle'
+  fuelTimeLoss_1: 'fuelTimeLoss_1',
+  pitFuelTimeLossShift: 'pitFuelTimeLossShift',
+  pitFuelTimeLossCurrent: 'pitFuelTimeLossCurrent'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -401,139 +402,205 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "fuelTimeLoss_1" | "datasetCycle"
+    modelProps: "fuelTimeLoss_1" | "pitFuelTimeLossShift" | "pitFuelTimeLossCurrent"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
-    FuelTimeLoss_1: {
-      payload: Prisma.$FuelTimeLoss_1Payload<ExtArgs>
-      fields: Prisma.FuelTimeLoss_1FieldRefs
+    fuelTimeLoss_1: {
+      payload: Prisma.$fuelTimeLoss_1Payload<ExtArgs>
+      fields: Prisma.fuelTimeLoss_1FieldRefs
       operations: {
         findUnique: {
-          args: Prisma.FuelTimeLoss_1FindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload> | null
+          args: Prisma.fuelTimeLoss_1FindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.FuelTimeLoss_1FindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>
+          args: Prisma.fuelTimeLoss_1FindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>
         }
         findFirst: {
-          args: Prisma.FuelTimeLoss_1FindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload> | null
+          args: Prisma.fuelTimeLoss_1FindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.FuelTimeLoss_1FindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>
+          args: Prisma.fuelTimeLoss_1FindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>
         }
         findMany: {
-          args: Prisma.FuelTimeLoss_1FindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>[]
+          args: Prisma.fuelTimeLoss_1FindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>[]
         }
         create: {
-          args: Prisma.FuelTimeLoss_1CreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>
+          args: Prisma.fuelTimeLoss_1CreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>
         }
         createMany: {
-          args: Prisma.FuelTimeLoss_1CreateManyArgs<ExtArgs>
+          args: Prisma.fuelTimeLoss_1CreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.FuelTimeLoss_1DeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>
+          args: Prisma.fuelTimeLoss_1DeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>
         }
         update: {
-          args: Prisma.FuelTimeLoss_1UpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>
+          args: Prisma.fuelTimeLoss_1UpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>
         }
         deleteMany: {
-          args: Prisma.FuelTimeLoss_1DeleteManyArgs<ExtArgs>
+          args: Prisma.fuelTimeLoss_1DeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.FuelTimeLoss_1UpdateManyArgs<ExtArgs>
+          args: Prisma.fuelTimeLoss_1UpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.FuelTimeLoss_1UpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$FuelTimeLoss_1Payload>
+          args: Prisma.fuelTimeLoss_1UpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$fuelTimeLoss_1Payload>
         }
         aggregate: {
           args: Prisma.FuelTimeLoss_1AggregateArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.AggregateFuelTimeLoss_1>
         }
         groupBy: {
-          args: Prisma.FuelTimeLoss_1GroupByArgs<ExtArgs>
+          args: Prisma.fuelTimeLoss_1GroupByArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.FuelTimeLoss_1GroupByOutputType>[]
         }
         count: {
-          args: Prisma.FuelTimeLoss_1CountArgs<ExtArgs>
+          args: Prisma.fuelTimeLoss_1CountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.FuelTimeLoss_1CountAggregateOutputType> | number
         }
       }
     }
-    DatasetCycle: {
-      payload: Prisma.$DatasetCyclePayload<ExtArgs>
-      fields: Prisma.DatasetCycleFieldRefs
+    pitFuelTimeLossShift: {
+      payload: Prisma.$pitFuelTimeLossShiftPayload<ExtArgs>
+      fields: Prisma.pitFuelTimeLossShiftFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.DatasetCycleFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload> | null
+          args: Prisma.pitFuelTimeLossShiftFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.DatasetCycleFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>
+          args: Prisma.pitFuelTimeLossShiftFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>
         }
         findFirst: {
-          args: Prisma.DatasetCycleFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload> | null
+          args: Prisma.pitFuelTimeLossShiftFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.DatasetCycleFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>
+          args: Prisma.pitFuelTimeLossShiftFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>
         }
         findMany: {
-          args: Prisma.DatasetCycleFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>[]
+          args: Prisma.pitFuelTimeLossShiftFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>[]
         }
         create: {
-          args: Prisma.DatasetCycleCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>
+          args: Prisma.pitFuelTimeLossShiftCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>
         }
         createMany: {
-          args: Prisma.DatasetCycleCreateManyArgs<ExtArgs>
+          args: Prisma.pitFuelTimeLossShiftCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.DatasetCycleDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>
+          args: Prisma.pitFuelTimeLossShiftDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>
         }
         update: {
-          args: Prisma.DatasetCycleUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>
+          args: Prisma.pitFuelTimeLossShiftUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>
         }
         deleteMany: {
-          args: Prisma.DatasetCycleDeleteManyArgs<ExtArgs>
+          args: Prisma.pitFuelTimeLossShiftDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.DatasetCycleUpdateManyArgs<ExtArgs>
+          args: Prisma.pitFuelTimeLossShiftUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.DatasetCycleUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DatasetCyclePayload>
+          args: Prisma.pitFuelTimeLossShiftUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossShiftPayload>
         }
         aggregate: {
-          args: Prisma.DatasetCycleAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateDatasetCycle>
+          args: Prisma.PitFuelTimeLossShiftAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePitFuelTimeLossShift>
         }
         groupBy: {
-          args: Prisma.DatasetCycleGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.DatasetCycleGroupByOutputType>[]
+          args: Prisma.pitFuelTimeLossShiftGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PitFuelTimeLossShiftGroupByOutputType>[]
         }
         count: {
-          args: Prisma.DatasetCycleCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.DatasetCycleCountAggregateOutputType> | number
+          args: Prisma.pitFuelTimeLossShiftCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PitFuelTimeLossShiftCountAggregateOutputType> | number
+        }
+      }
+    }
+    pitFuelTimeLossCurrent: {
+      payload: Prisma.$pitFuelTimeLossCurrentPayload<ExtArgs>
+      fields: Prisma.pitFuelTimeLossCurrentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.pitFuelTimeLossCurrentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.pitFuelTimeLossCurrentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>
+        }
+        findFirst: {
+          args: Prisma.pitFuelTimeLossCurrentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.pitFuelTimeLossCurrentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>
+        }
+        findMany: {
+          args: Prisma.pitFuelTimeLossCurrentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>[]
+        }
+        create: {
+          args: Prisma.pitFuelTimeLossCurrentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>
+        }
+        createMany: {
+          args: Prisma.pitFuelTimeLossCurrentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.pitFuelTimeLossCurrentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>
+        }
+        update: {
+          args: Prisma.pitFuelTimeLossCurrentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>
+        }
+        deleteMany: {
+          args: Prisma.pitFuelTimeLossCurrentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.pitFuelTimeLossCurrentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.pitFuelTimeLossCurrentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$pitFuelTimeLossCurrentPayload>
+        }
+        aggregate: {
+          args: Prisma.PitFuelTimeLossCurrentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePitFuelTimeLossCurrent>
+        }
+        groupBy: {
+          args: Prisma.pitFuelTimeLossCurrentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PitFuelTimeLossCurrentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.pitFuelTimeLossCurrentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PitFuelTimeLossCurrentCountAggregateOutputType> | number
         }
       }
     }
@@ -591,80 +658,52 @@ export const FuelTimeLoss_1ScalarFieldEnum = {
 export type FuelTimeLoss_1ScalarFieldEnum = (typeof FuelTimeLoss_1ScalarFieldEnum)[keyof typeof FuelTimeLoss_1ScalarFieldEnum]
 
 
-export const DatasetCycleScalarFieldEnum = {
-  LoadID: 'LoadID',
+export const PitFuelTimeLossShiftScalarFieldEnum = {
+  RecordId: 'RecordId',
   ShiftId: 'ShiftId',
-  ShiftDate: 'ShiftDate',
-  Bin5Mins: 'Bin5Mins',
-  Bin15Mins: 'Bin15Mins',
-  Bin30Mins: 'Bin30Mins',
-  Bin60Mins: 'Bin60Mins',
-  LoadPit: 'LoadPit',
-  LoadRegion: 'LoadRegion',
-  LoadLocation: 'LoadLocation',
-  DumpLocation: 'DumpLocation',
-  ExcavID: 'ExcavID',
-  ExcavSize: 'ExcavSize',
-  ExcavType: 'ExcavType',
-  ExcavOperatorID: 'ExcavOperatorID',
-  ExcavDeptID: 'ExcavDeptID',
-  ExcavOwnerID: 'ExcavOwnerID',
-  TruckID: 'TruckID',
-  TruckSize: 'TruckSize',
-  TruckType: 'TruckType',
-  TruckOperatorID: 'TruckOperatorID',
-  TruckDeptID: 'TruckDeptID',
-  TruckOwnerID: 'TruckOwnerID',
-  AssignToFrontTimestamp: 'AssignToFrontTimestamp',
-  ExpctdEmptyTravelSec: 'ExpctdEmptyTravelSec',
-  EmptyTravDurationSec: 'EmptyTravDurationSec',
-  HangTimeSec: 'HangTimeSec',
-  ArriveAtFrontTimestamp: 'ArriveAtFrontTimestamp',
-  QueTimeSec: 'QueTimeSec',
-  SpottingTimestamp: 'SpottingTimestamp',
-  SpotTimeSec: 'SpotTimeSec',
-  LoadingTimestamp: 'LoadingTimestamp',
-  LoadingTimeSec: 'LoadingTimeSec',
-  FullTimestamp: 'FullTimestamp',
-  ExpctdFullTravelSec: 'ExpctdFullTravelSec',
-  FullTravDurationSec: 'FullTravDurationSec',
-  ArriveAtDumpTimestamp: 'ArriveAtDumpTimestamp',
-  DumpTimeSec: 'DumpTimeSec',
-  EmptyTimestamp: 'EmptyTimestamp',
-  TrucksInQueTimeFull: 'TrucksInQueTimeFull',
-  MaterialID: 'MaterialID',
-  EmptyDistKM: 'EmptyDistKM',
-  FullDistKM: 'FullDistKM',
-  FieldFirstDipper: 'FieldFirstDipper',
-  FieldLastDipper: 'FieldLastDipper',
-  TonsAtLoad: 'TonsAtLoad',
-  TonsAtDump: 'TonsAtDump',
-  TruckFactor: 'TruckFactor',
-  Elocked: 'Elocked',
-  DiffPass1: 'DiffPass1',
-  DiffPass2: 'DiffPass2',
-  DiffPass3: 'DiffPass3',
-  DiffPass4: 'DiffPass4',
-  DiffPass5: 'DiffPass5',
-  DiffPass6: 'DiffPass6',
-  DiffPass7: 'DiffPass7',
-  DiffPass8: 'DiffPass8',
-  DiffPass9: 'DiffPass9',
-  DiffPass10: 'DiffPass10',
-  DiffTime1: 'DiffTime1',
-  DiffTime2: 'DiffTime2',
-  DiffTime3: 'DiffTime3',
-  DiffTime4: 'DiffTime4',
-  DiffTime5: 'DiffTime5',
-  DiffTime6: 'DiffTime6',
-  DiffTime7: 'DiffTime7',
-  DiffTime8: 'DiffTime8',
-  DiffTime9: 'DiffTime9',
-  DiffTime10: 'DiffTime10',
-  FlagExtraload: 'FlagExtraload'
+  Equipment: 'Equipment',
+  Status: 'Status',
+  Reason: 'Reason',
+  Load: 'Load',
+  Location: 'Location',
+  UnitLoc: 'UnitLoc',
+  OperatorName: 'OperatorName',
+  Crew: 'Crew',
+  IdFuelRate: 'IdFuelRate',
+  FuelRate: 'FuelRate',
+  FuelLoss: 'FuelLoss',
+  TimeFuelRate: 'TimeFuelRate',
+  IdRPM: 'IdRPM',
+  RPM: 'RPM',
+  TimeRPM: 'TimeRPM',
+  RefreshTime: 'RefreshTime'
 } as const
 
-export type DatasetCycleScalarFieldEnum = (typeof DatasetCycleScalarFieldEnum)[keyof typeof DatasetCycleScalarFieldEnum]
+export type PitFuelTimeLossShiftScalarFieldEnum = (typeof PitFuelTimeLossShiftScalarFieldEnum)[keyof typeof PitFuelTimeLossShiftScalarFieldEnum]
+
+
+export const PitFuelTimeLossCurrentScalarFieldEnum = {
+  RecordId: 'RecordId',
+  ShiftId: 'ShiftId',
+  Equipment: 'Equipment',
+  Status: 'Status',
+  Reason: 'Reason',
+  Load: 'Load',
+  Location: 'Location',
+  UnitLoc: 'UnitLoc',
+  OperatorName: 'OperatorName',
+  Crew: 'Crew',
+  IdFuelRate: 'IdFuelRate',
+  FuelRate: 'FuelRate',
+  FuelLoss: 'FuelLoss',
+  TimeFuelRate: 'TimeFuelRate',
+  IdRPM: 'IdRPM',
+  RPM: 'RPM',
+  TimeRPM: 'TimeRPM',
+  RefreshTime: 'RefreshTime'
+} as const
+
+export type PitFuelTimeLossCurrentScalarFieldEnum = (typeof PitFuelTimeLossCurrentScalarFieldEnum)[keyof typeof PitFuelTimeLossCurrentScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -802,8 +841,9 @@ export type PrismaClientOptions = ({
   omit?: GlobalOmitConfig
 }
 export type GlobalOmitConfig = {
-  fuelTimeLoss_1?: Prisma.FuelTimeLoss_1Omit
-  datasetCycle?: Prisma.DatasetCycleOmit
+  fuelTimeLoss_1?: Prisma.fuelTimeLoss_1Omit
+  pitFuelTimeLossShift?: Prisma.pitFuelTimeLossShiftOmit
+  pitFuelTimeLossCurrent?: Prisma.pitFuelTimeLossCurrentOmit
 }
 
 /* Types for Logging */

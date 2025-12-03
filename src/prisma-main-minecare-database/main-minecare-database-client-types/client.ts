@@ -40,12 +40,17 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model FuelTimeLoss_1
+ * Model fuelTimeLoss_1
  * 
  */
-export type FuelTimeLoss_1 = Prisma.FuelTimeLoss_1Model
+export type fuelTimeLoss_1 = Prisma.fuelTimeLoss_1Model
 /**
- * Model DatasetCycle
+ * Model pitFuelTimeLossShift
  * 
  */
-export type DatasetCycle = Prisma.DatasetCycleModel
+export type pitFuelTimeLossShift = Prisma.pitFuelTimeLossShiftModel
+/**
+ * Model pitFuelTimeLossCurrent
+ * 
+ */
+export type pitFuelTimeLossCurrent = Prisma.pitFuelTimeLossCurrentModel

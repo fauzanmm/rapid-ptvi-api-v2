@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "npx prisma generate --schema src/prisma-pc04-database/schema.prisma && npx prisma generate --schema src/prisma-pc75-database/schema.prisma",
+    "generate": "npx prisma generate --schema src/prisma-main-minecare-database/schema.prisma && npx prisma generate --schema src/prisma-pc75-database/schema.prisma",
     "dev": "npx tsx src/main.ts",
     "devx": "npx tsx --no-deprecation main.ts",
     "build": "tsc",
