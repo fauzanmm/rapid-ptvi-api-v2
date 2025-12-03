@@ -23,9 +23,18 @@ DB_PC75_HOST="ipserver"
 3. Running code berikut
 
 ```bash
+# setelah clone, maka perlu install modules
+npm install
+
 # generate connection 2 database Prisma
 npm run generate
 
 # run and see the result
 npm run dev
+
+# build the apps
+npm run build
+
+# after build is done, start the apps
+npm run start
 ```
