@@ -46,7 +46,12 @@ const prismaMainMinecare = new PrismaClient({
 });
 
 prismaMainMinecare.$on("error", (e) => {
-  logger.error(e);
+  logger.info({
+    level: "error",
+    server: sqlConfig.server,
+    database: sqlConfig.database,
+    timestamp: new Date().toISOString,
+  });
 });
 
 prismaMainMinecare.$on("warn", (e) => {
@@ -58,7 +63,15 @@ prismaMainMinecare.$on("info", (e) => {
 });
 
 prismaMainMinecare.$on("query", (e) => {
-  logger.info(e);
+  logger.info({
+    level: "query",
+    server: sqlConfig.server,
+    database: sqlConfig.database,
+    query: e.query,
+    duration: e.duration,
+    params: e.params,
+    timestamp: new Date().toISOString,
+  });
 });
 
 export { prismaMainMinecare };

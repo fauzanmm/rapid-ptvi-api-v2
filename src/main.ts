@@ -8,7 +8,7 @@ async function Home() {
   console.log({ data, data75 });
 }
 
-Home();
+export default Home();
 // logger.info("Server booting up...");
 // logger.warn("Ini warning");
 // logger.error("Ini error");
