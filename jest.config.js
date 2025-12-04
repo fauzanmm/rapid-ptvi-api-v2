@@ -13,7 +13,7 @@ export default {
     // Membantu Jest mengenali import dengan ekstensi .js (wajib di ESM native)
     "^(\\.{1,2}/.*)\\.js$": "$1",
   },
-
+  verbose: true,
   transform: {
     // Konfigurasi spesifik ts-jest untuk menggunakan ESM
     "^.+\\.tsx?$": [

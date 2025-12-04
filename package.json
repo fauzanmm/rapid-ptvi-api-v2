@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "testname": "jest --testNamePattern",
     "generate": "npx prisma generate --schema src/prisma-main-minecare-database/schema.prisma && npx prisma generate --schema src/prisma-pc75-database/schema.prisma",
     "dev": "npx tsx src/main.ts",
     "devx": "npx tsx --no-deprecation main.ts",

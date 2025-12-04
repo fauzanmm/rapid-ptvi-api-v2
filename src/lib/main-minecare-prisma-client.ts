@@ -21,50 +21,44 @@ const sqlConfig = {
 };
 
 const adapter = new PrismaMssql(sqlConfig);
-const prismaMainMinecare = new PrismaClient({ adapter });
+const prismaMainMinecare = new PrismaClient({
+  adapter,
 
-// Konfigurasi logging untuk Prisma Client Main Minecare Database
-const prismaAny = prismaMainMinecare as any;
-
-interface QueryEvent {
-  query: string;
-  params: string;
-  duration: number;
-}
-
-interface InfoEvent {
-  message: string;
-}
-
-interface WarnEvent {
-  message: string;
-}
-
-interface ErrorEvent {
-  message: string;
-  code?: string;
-}
-
-prismaAny.$on("query", (e: QueryEvent) => {
-  logger.info("PrismaMainMinecare query", {
-    query: e.query,
-    params: e.params,
-    duration: e.duration,
-    timestamp: new Date().toISOString(),
-    datasource: "MainMinecare",
-  });
+  // Konfigurasi logging menggunakan logger dari winston
+  log: [
+    {
+      emit: "event",
+      level: "query",
+    },
+    {
+      emit: "event",
+      level: "error",
+    },
+    {
+      emit: "event",
+      level: "info",
+    },
+    {
+      emit: "event",
+      level: "warn",
+    },
+  ],
 });
 
-prismaAny.$on("info", (e: InfoEvent) =>
-  logger.info("PrismaMainMinecare info", { ...e, datasource: "MainMinecare" })
-);
+prismaMainMinecare.$on("error", (e) => {
+  logger.error(e);
+});
 
-prismaAny.$on("warn", (e: WarnEvent) =>
-  logger.warn("PrismaMainMinecare warn", { ...e, datasource: "MainMinecare" })
-);
+prismaMainMinecare.$on("warn", (e) => {
+  logger.warn(e);
+});
 
-prismaAny.$on("error", (e: ErrorEvent) =>
-  logger.error("PrismaMainMinecare error", { ...e, datasource: "MainMinecare" })
-);
+prismaMainMinecare.$on("info", (e) => {
+  logger.info(e);
+});
+
+prismaMainMinecare.$on("query", (e) => {
+  logger.info(e);
+});
 
 export { prismaMainMinecare };
