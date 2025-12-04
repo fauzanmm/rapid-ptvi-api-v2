@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "generate": "npx prisma generate --schema src/prisma-main-minecare-database/schema.prisma && npx prisma generate --schema src/prisma-pc75-database/schema.prisma",
     "dev": "npx tsx src/main.ts",
     "devx": "npx tsx --no-deprecation main.ts",
@@ -18,11 +18,14 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/mssql": "^9.1.8",
     "@types/node": "^24.10.1",
     "@types/swagger-ui-express": "^4.1.8",
     "@types/winston": "^2.4.4",
+    "jest": "^30.2.0",
     "prisma": "^7.0.1",
+    "ts-jest": "^29.4.6",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
