@@ -22,7 +22,7 @@ tags:
       The dataset is used to detect engine on when the truck is not ready
       and has rpm and fuel burn rate
 paths:
-  "/v1/fuelTimeLoss/current":
+  "/v2/fuelTimeLoss/current":
     get:
       summary:
         Get a list of trucks that are currently has status idle/delay/down
@@ -66,7 +66,7 @@ paths:
                     timestamp: "2025-07-07T10:00:00Z"
       tags:
         - Engine Detection
-  "/v1/fuelTimeLoss/shift/{department}":
+  "/v2/fuelTimeLoss/shift/{department}":
     get:
       summary:
         Get a list of trucks that are current shift has status idle/delay/down
@@ -134,7 +134,7 @@ paths:
               - geology
               - mo
               - drill & blast
-  "/v1/fuelTimeLoss/shift/table/{department}":
+  "/v2/fuelTimeLoss/shift/table/{department}":
     get:
       summary:
         Get a table list of trucks that are current shift has status idle/delay/down
@@ -218,7 +218,7 @@ paths:
             default: 50
             minimum: 1
             maximum: 1000
-  "/v1/fuelTimeLoss/shift/summary/{department}":
+  "/v2/fuelTimeLoss/shift/summary/{department}":
     get:
       summary:
         Get a summary of lost hours and lost fuels for each department that
@@ -286,7 +286,7 @@ paths:
               - geology
               - mo
               - drill & blast
-  "/v1/fuelTimeLoss/month":
+  "/v2/fuelTimeLoss/month":
     get:
       summary: Get a summarized data list of truck fuel loss and hour loss each month
       parameters:
@@ -360,7 +360,7 @@ paths:
                     timestamp: "2025-07-07T10:00:00Z"
       tags:
         - Engine Detection
-  "/v1/fuelTimeLoss/month/summary/monthly":
+  "/v2/fuelTimeLoss/month/summary/monthly":
     get:
       summary: Get a summarized data list of truck fuel loss and hour loss each month
       parameters:

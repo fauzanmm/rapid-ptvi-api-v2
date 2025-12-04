@@ -1,32 +1,21 @@
 import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
-// import { ResponseError } from "../error/response-error.js";
-import { dataConverter } from "./fueltimeloss-format-service";
+import { ResponseError } from "../error/error-response";
+import { logger } from "../application/logging";
+// import { dataConverter } from "./fueltimeloss-format-service";
 
-const get = async (department) => {
+const get = async () => {
   try {
-    // const data =
-    //   await prismaClient.$queryRaw`EXEC dbo.SPPitFuelTimeLossCurrent ${department}`;
-    const data = await prismaClient.PITFuelTimeLossCurrent.findMany({
-      where: {
-        Department: department,
-      },
-      // take: 1, // untuk test saja
-    });
+    const data = await prismaMainMinecare.pitFuelTimeLossCurrent.findMany({});
 
-    if (!data) {
+    if (data.length === 0) {
       throw new ResponseError(404, "Data is not found");
     }
 
-    const result = await dataConverter(data);
-    // const result = data;
-    return result;
-  } catch (error) {
-    if (error.code === "P2024") {
-      throw new ResponseError(
-        503,
-        "Database connection timeout. Please try again later."
-      );
-    }
+    // const result = await dataConverter(data);
+    return data;
+    // return result;
+  } catch (error: any) {
+    logger.error(error);
     throw new ResponseError(
       500,
       `Database connection failed : ${error.message}`
