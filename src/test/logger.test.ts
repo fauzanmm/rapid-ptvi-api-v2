@@ -16,7 +16,7 @@ import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
 
 test("get first data pitfueltimeloss", async () => {
   const data = await pitFuelTimeLossCurrent();
-  expect(data?.RecordId).toEqual(1);
+  expect(data?.RecordId).toBe(1);
 });
 
 afterAll(async () => {
