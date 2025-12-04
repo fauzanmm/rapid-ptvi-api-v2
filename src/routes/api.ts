@@ -4,22 +4,6 @@ import currentFuelTimeLossController from "../controller/current-fueltimeloss-co
 const userRouter = express.Router();
 // userRouter.use(authMiddleware)
 
-userRouter.get(
-  "/api/v2/fuelTimeLoss/current",
-  currentFuelTimeLossController.get
-);
-// userRouter.get(
-//   "/api/v1/fuelTimeLoss/shift/:department",
-//   shiftFuelTimeLossController.get
-// );
-// userRouter.get("/api/v1/fuelTimeLoss/month", monthFuelTimeLossController.get);
-// userRouter.get(
-//   "/api/v1/fuelTimeLoss/shift/table/:department",
-//   shiftPageFuelTimeLossController.get
-// );
-// userRouter.get(
-//   "/api/v1/fuelTimeLoss/shift/summary/:department",
-//   shiftSummaryFuelTimeLossController.get
-// );
+userRouter.get("/v2/fuelTimeLoss/current", currentFuelTimeLossController.get);
 
 export { userRouter };

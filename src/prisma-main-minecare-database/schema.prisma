@@ -29,11 +29,11 @@ model pitFuelTimeLossShift {
   UnitLoc      String?   @db.VarChar(64)
   OperatorName String?   @db.VarChar(40)
   Crew         String?   @db.VarChar(12)
-  IdFuelRate   BigInt?
+  IdFuelRate   Int
   FuelRate     Float?
   FuelLoss     Float?
   TimeFuelRate DateTime? @db.DateTime
-  IdRPM        BigInt?
+  IdRPM        Int
   RPM          Float?
   TimeRPM      DateTime? @db.DateTime
   RefreshTime  DateTime? @db.DateTime
@@ -50,11 +50,11 @@ model pitFuelTimeLossCurrent {
   UnitLoc      String?   @db.VarChar(64)
   OperatorName String?   @db.VarChar(40)
   Crew         String?   @db.VarChar(12)
-  IdFuelRate   BigInt?
+  IdFuelRate   Int
   FuelRate     Float?
   FuelLoss     Float?
   TimeFuelRate DateTime? @db.DateTime
-  IdRPM        BigInt?
+  IdRPM        Int
   RPM          Float?
   TimeRPM      DateTime? @db.DateTime
   RefreshTime  DateTime? @db.DateTime

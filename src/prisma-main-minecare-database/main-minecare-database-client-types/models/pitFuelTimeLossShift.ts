@@ -39,10 +39,10 @@ export type PitFuelTimeLossShiftAvgAggregateOutputType = {
 export type PitFuelTimeLossShiftSumAggregateOutputType = {
   RecordId: number | null
   ShiftId: number | null
-  IdFuelRate: bigint | null
+  IdFuelRate: number | null
   FuelRate: number | null
   FuelLoss: number | null
-  IdRPM: bigint | null
+  IdRPM: number | null
   RPM: number | null
 }
 
@@ -57,11 +57,11 @@ export type PitFuelTimeLossShiftMinAggregateOutputType = {
   UnitLoc: string | null
   OperatorName: string | null
   Crew: string | null
-  IdFuelRate: bigint | null
+  IdFuelRate: number | null
   FuelRate: number | null
   FuelLoss: number | null
   TimeFuelRate: Date | null
-  IdRPM: bigint | null
+  IdRPM: number | null
   RPM: number | null
   TimeRPM: Date | null
   RefreshTime: Date | null
@@ -78,11 +78,11 @@ export type PitFuelTimeLossShiftMaxAggregateOutputType = {
   UnitLoc: string | null
   OperatorName: string | null
   Crew: string | null
-  IdFuelRate: bigint | null
+  IdFuelRate: number | null
   FuelRate: number | null
   FuelLoss: number | null
   TimeFuelRate: Date | null
-  IdRPM: bigint | null
+  IdRPM: number | null
   RPM: number | null
   TimeRPM: Date | null
   RefreshTime: Date | null
@@ -292,11 +292,11 @@ export type PitFuelTimeLossShiftGroupByOutputType = {
   UnitLoc: string | null
   OperatorName: string | null
   Crew: string | null
-  IdFuelRate: bigint | null
+  IdFuelRate: number
   FuelRate: number | null
   FuelLoss: number | null
   TimeFuelRate: Date | null
-  IdRPM: bigint | null
+  IdRPM: number
   RPM: number | null
   TimeRPM: Date | null
   RefreshTime: Date | null
@@ -336,11 +336,11 @@ export type pitFuelTimeLossShiftWhereInput = {
   UnitLoc?: Prisma.StringNullableFilter<"pitFuelTimeLossShift"> | string | null
   OperatorName?: Prisma.StringNullableFilter<"pitFuelTimeLossShift"> | string | null
   Crew?: Prisma.StringNullableFilter<"pitFuelTimeLossShift"> | string | null
-  IdFuelRate?: Prisma.BigIntNullableFilter<"pitFuelTimeLossShift"> | bigint | number | null
+  IdFuelRate?: Prisma.IntFilter<"pitFuelTimeLossShift"> | number
   FuelRate?: Prisma.FloatNullableFilter<"pitFuelTimeLossShift"> | number | null
   FuelLoss?: Prisma.FloatNullableFilter<"pitFuelTimeLossShift"> | number | null
   TimeFuelRate?: Prisma.DateTimeNullableFilter<"pitFuelTimeLossShift"> | Date | string | null
-  IdRPM?: Prisma.BigIntNullableFilter<"pitFuelTimeLossShift"> | bigint | number | null
+  IdRPM?: Prisma.IntFilter<"pitFuelTimeLossShift"> | number
   RPM?: Prisma.FloatNullableFilter<"pitFuelTimeLossShift"> | number | null
   TimeRPM?: Prisma.DateTimeNullableFilter<"pitFuelTimeLossShift"> | Date | string | null
   RefreshTime?: Prisma.DateTimeNullableFilter<"pitFuelTimeLossShift"> | Date | string | null
@@ -357,11 +357,11 @@ export type pitFuelTimeLossShiftOrderByWithRelationInput = {
   UnitLoc?: Prisma.SortOrderInput | Prisma.SortOrder
   OperatorName?: Prisma.SortOrderInput | Prisma.SortOrder
   Crew?: Prisma.SortOrderInput | Prisma.SortOrder
-  IdFuelRate?: Prisma.SortOrderInput | Prisma.SortOrder
+  IdFuelRate?: Prisma.SortOrder
   FuelRate?: Prisma.SortOrderInput | Prisma.SortOrder
   FuelLoss?: Prisma.SortOrderInput | Prisma.SortOrder
   TimeFuelRate?: Prisma.SortOrderInput | Prisma.SortOrder
-  IdRPM?: Prisma.SortOrderInput | Prisma.SortOrder
+  IdRPM?: Prisma.SortOrder
   RPM?: Prisma.SortOrderInput | Prisma.SortOrder
   TimeRPM?: Prisma.SortOrderInput | Prisma.SortOrder
   RefreshTime?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -381,11 +381,11 @@ export type pitFuelTimeLossShiftWhereUniqueInput = Prisma.AtLeast<{
   UnitLoc?: Prisma.StringNullableFilter<"pitFuelTimeLossShift"> | string | null
   OperatorName?: Prisma.StringNullableFilter<"pitFuelTimeLossShift"> | string | null
   Crew?: Prisma.StringNullableFilter<"pitFuelTimeLossShift"> | string | null
-  IdFuelRate?: Prisma.BigIntNullableFilter<"pitFuelTimeLossShift"> | bigint | number | null
+  IdFuelRate?: Prisma.IntFilter<"pitFuelTimeLossShift"> | number
   FuelRate?: Prisma.FloatNullableFilter<"pitFuelTimeLossShift"> | number | null
   FuelLoss?: Prisma.FloatNullableFilter<"pitFuelTimeLossShift"> | number | null
   TimeFuelRate?: Prisma.DateTimeNullableFilter<"pitFuelTimeLossShift"> | Date | string | null
-  IdRPM?: Prisma.BigIntNullableFilter<"pitFuelTimeLossShift"> | bigint | number | null
+  IdRPM?: Prisma.IntFilter<"pitFuelTimeLossShift"> | number
   RPM?: Prisma.FloatNullableFilter<"pitFuelTimeLossShift"> | number | null
   TimeRPM?: Prisma.DateTimeNullableFilter<"pitFuelTimeLossShift"> | Date | string | null
   RefreshTime?: Prisma.DateTimeNullableFilter<"pitFuelTimeLossShift"> | Date | string | null
@@ -402,11 +402,11 @@ export type pitFuelTimeLossShiftOrderByWithAggregationInput = {
   UnitLoc?: Prisma.SortOrderInput | Prisma.SortOrder
   OperatorName?: Prisma.SortOrderInput | Prisma.SortOrder
   Crew?: Prisma.SortOrderInput | Prisma.SortOrder
-  IdFuelRate?: Prisma.SortOrderInput | Prisma.SortOrder
+  IdFuelRate?: Prisma.SortOrder
   FuelRate?: Prisma.SortOrderInput | Prisma.SortOrder
   FuelLoss?: Prisma.SortOrderInput | Prisma.SortOrder
   TimeFuelRate?: Prisma.SortOrderInput | Prisma.SortOrder
-  IdRPM?: Prisma.SortOrderInput | Prisma.SortOrder
+  IdRPM?: Prisma.SortOrder
   RPM?: Prisma.SortOrderInput | Prisma.SortOrder
   TimeRPM?: Prisma.SortOrderInput | Prisma.SortOrder
   RefreshTime?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -431,11 +431,11 @@ export type pitFuelTimeLossShiftScalarWhereWithAggregatesInput = {
   UnitLoc?: Prisma.StringNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | string | null
   OperatorName?: Prisma.StringNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | string | null
   Crew?: Prisma.StringNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | string | null
-  IdFuelRate?: Prisma.BigIntNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | bigint | number | null
+  IdFuelRate?: Prisma.IntWithAggregatesFilter<"pitFuelTimeLossShift"> | number
   FuelRate?: Prisma.FloatNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | number | null
   FuelLoss?: Prisma.FloatNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | number | null
   TimeFuelRate?: Prisma.DateTimeNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | Date | string | null
-  IdRPM?: Prisma.BigIntNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | bigint | number | null
+  IdRPM?: Prisma.IntWithAggregatesFilter<"pitFuelTimeLossShift"> | number
   RPM?: Prisma.FloatNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | number | null
   TimeRPM?: Prisma.DateTimeNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | Date | string | null
   RefreshTime?: Prisma.DateTimeNullableWithAggregatesFilter<"pitFuelTimeLossShift"> | Date | string | null
@@ -451,11 +451,11 @@ export type pitFuelTimeLossShiftCreateInput = {
   UnitLoc?: string | null
   OperatorName?: string | null
   Crew?: string | null
-  IdFuelRate?: bigint | number | null
+  IdFuelRate: number
   FuelRate?: number | null
   FuelLoss?: number | null
   TimeFuelRate?: Date | string | null
-  IdRPM?: bigint | number | null
+  IdRPM: number
   RPM?: number | null
   TimeRPM?: Date | string | null
   RefreshTime?: Date | string | null
@@ -472,11 +472,11 @@ export type pitFuelTimeLossShiftUncheckedCreateInput = {
   UnitLoc?: string | null
   OperatorName?: string | null
   Crew?: string | null
-  IdFuelRate?: bigint | number | null
+  IdFuelRate: number
   FuelRate?: number | null
   FuelLoss?: number | null
   TimeFuelRate?: Date | string | null
-  IdRPM?: bigint | number | null
+  IdRPM: number
   RPM?: number | null
   TimeRPM?: Date | string | null
   RefreshTime?: Date | string | null
@@ -492,11 +492,11 @@ export type pitFuelTimeLossShiftUpdateInput = {
   UnitLoc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   OperatorName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   Crew?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  IdFuelRate?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdFuelRate?: Prisma.IntFieldUpdateOperationsInput | number
   FuelRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   FuelLoss?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeFuelRate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  IdRPM?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdRPM?: Prisma.IntFieldUpdateOperationsInput | number
   RPM?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeRPM?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   RefreshTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -513,11 +513,11 @@ export type pitFuelTimeLossShiftUncheckedUpdateInput = {
   UnitLoc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   OperatorName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   Crew?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  IdFuelRate?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdFuelRate?: Prisma.IntFieldUpdateOperationsInput | number
   FuelRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   FuelLoss?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeFuelRate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  IdRPM?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdRPM?: Prisma.IntFieldUpdateOperationsInput | number
   RPM?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeRPM?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   RefreshTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -533,11 +533,11 @@ export type pitFuelTimeLossShiftCreateManyInput = {
   UnitLoc?: string | null
   OperatorName?: string | null
   Crew?: string | null
-  IdFuelRate?: bigint | number | null
+  IdFuelRate: number
   FuelRate?: number | null
   FuelLoss?: number | null
   TimeFuelRate?: Date | string | null
-  IdRPM?: bigint | number | null
+  IdRPM: number
   RPM?: number | null
   TimeRPM?: Date | string | null
   RefreshTime?: Date | string | null
@@ -553,11 +553,11 @@ export type pitFuelTimeLossShiftUpdateManyMutationInput = {
   UnitLoc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   OperatorName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   Crew?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  IdFuelRate?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdFuelRate?: Prisma.IntFieldUpdateOperationsInput | number
   FuelRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   FuelLoss?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeFuelRate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  IdRPM?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdRPM?: Prisma.IntFieldUpdateOperationsInput | number
   RPM?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeRPM?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   RefreshTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -574,11 +574,11 @@ export type pitFuelTimeLossShiftUncheckedUpdateManyInput = {
   UnitLoc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   OperatorName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   Crew?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  IdFuelRate?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdFuelRate?: Prisma.IntFieldUpdateOperationsInput | number
   FuelRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   FuelLoss?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeFuelRate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  IdRPM?: Prisma.NullableBigIntFieldUpdateOperationsInput | bigint | number | null
+  IdRPM?: Prisma.IntFieldUpdateOperationsInput | number
   RPM?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   TimeRPM?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   RefreshTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -667,14 +667,6 @@ export type pitFuelTimeLossShiftSumOrderByAggregateInput = {
   RPM?: Prisma.SortOrder
 }
 
-export type NullableBigIntFieldUpdateOperationsInput = {
-  set?: bigint | number | null
-  increment?: bigint | number
-  decrement?: bigint | number
-  multiply?: bigint | number
-  divide?: bigint | number
-}
-
 export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
 }
@@ -741,11 +733,11 @@ export type $pitFuelTimeLossShiftPayload<ExtArgs extends runtime.Types.Extension
     UnitLoc: string | null
     OperatorName: string | null
     Crew: string | null
-    IdFuelRate: bigint | null
+    IdFuelRate: number
     FuelRate: number | null
     FuelLoss: number | null
     TimeFuelRate: Date | null
-    IdRPM: bigint | null
+    IdRPM: number
     RPM: number | null
     TimeRPM: Date | null
     RefreshTime: Date | null
@@ -1128,11 +1120,11 @@ export interface pitFuelTimeLossShiftFieldRefs {
   readonly UnitLoc: Prisma.FieldRef<"pitFuelTimeLossShift", 'String'>
   readonly OperatorName: Prisma.FieldRef<"pitFuelTimeLossShift", 'String'>
   readonly Crew: Prisma.FieldRef<"pitFuelTimeLossShift", 'String'>
-  readonly IdFuelRate: Prisma.FieldRef<"pitFuelTimeLossShift", 'BigInt'>
+  readonly IdFuelRate: Prisma.FieldRef<"pitFuelTimeLossShift", 'Int'>
   readonly FuelRate: Prisma.FieldRef<"pitFuelTimeLossShift", 'Float'>
   readonly FuelLoss: Prisma.FieldRef<"pitFuelTimeLossShift", 'Float'>
   readonly TimeFuelRate: Prisma.FieldRef<"pitFuelTimeLossShift", 'DateTime'>
-  readonly IdRPM: Prisma.FieldRef<"pitFuelTimeLossShift", 'BigInt'>
+  readonly IdRPM: Prisma.FieldRef<"pitFuelTimeLossShift", 'Int'>
   readonly RPM: Prisma.FieldRef<"pitFuelTimeLossShift", 'Float'>
   readonly TimeRPM: Prisma.FieldRef<"pitFuelTimeLossShift", 'DateTime'>
   readonly RefreshTime: Prisma.FieldRef<"pitFuelTimeLossShift", 'DateTime'>
@@ -1330,7 +1322,7 @@ export type pitFuelTimeLossShiftCreateArgs<ExtArgs extends runtime.Types.Extensi
   /**
    * The data needed to create a pitFuelTimeLossShift.
    */
-  data?: Prisma.XOR<Prisma.pitFuelTimeLossShiftCreateInput, Prisma.pitFuelTimeLossShiftUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.pitFuelTimeLossShiftCreateInput, Prisma.pitFuelTimeLossShiftUncheckedCreateInput>
 }
 
 /**

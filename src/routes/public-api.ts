@@ -4,16 +4,7 @@ import { swaggerDocument } from "../config/apidoc";
 
 const publicRouter = express.Router();
 
-publicRouter.use(
-  "/api-docs",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocument)
-);
-
-// publicRouter.use("/api-docs", swaggerUi.serve);
-// publicRouter.get("/api-docs", swaggerUi.setup(swaggerDocument));
-
-// publicRouter.use("/api-specs", swaggerUi.serve);
-// publicRouter.get("/api-specs", swaggerUi.setup(apiSpec));
+publicRouter.use("/api-docs", swaggerUi.serve);
+publicRouter.get("/api-docs", swaggerUi.setup(swaggerDocument));
 
 export { publicRouter };

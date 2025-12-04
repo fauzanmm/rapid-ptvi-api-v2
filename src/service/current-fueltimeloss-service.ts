@@ -15,7 +15,6 @@ const get = async () => {
     return data;
     // return result;
   } catch (error: any) {
-    logger.error(error);
     throw new ResponseError(
       500,
       `Database connection failed : ${error.message}`
