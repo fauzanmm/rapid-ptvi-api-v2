@@ -1,6 +1,7 @@
 // import winston from "winston";
 import {
   pitFuelTimeLossCurrent,
+  pitFuelTimeLossShift,
   summaryFuelTimeLossShift,
 } from "./test-util.js";
 import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
@@ -19,6 +20,11 @@ import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
 
 test("get pitFuelTimeLossCurrent", async () => {
   const data = await pitFuelTimeLossCurrent();
+  expect(data?.RecordId).toBe(1);
+});
+
+test("get pitFuelTimeLossShift", async () => {
+  const data = await pitFuelTimeLossShift();
   expect(data?.RecordId).toBe(1);
 });
 

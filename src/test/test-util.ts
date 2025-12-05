@@ -11,6 +11,17 @@ export const pitFuelTimeLossCurrent = async () => {
   }
 };
 
+export const pitFuelTimeLossShift = async () => {
+  try {
+    const data = await prismaMainMinecare.pitFuelTimeLossShift.findFirst();
+    console.log(data);
+
+    return data;
+  } finally {
+    prismaMainMinecare.$disconnect();
+  }
+};
+
 export const summaryFuelTimeLossShift = async () => {
   try {
     const lossHour = await prismaMainMinecare.pitFuelTimeLossShift.count({});
