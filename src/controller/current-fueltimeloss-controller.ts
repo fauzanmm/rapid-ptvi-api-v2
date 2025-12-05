@@ -1,4 +1,5 @@
-import currentFuelTimeLoss from "../service/current-fueltimeloss-service.js";
+import currentFuelTimeLoss from "../service/current-fueltimeloss-service";
+import { logger } from "../application/logging";
 
 const get = async (req: any, res: any, next: any) => {
   try {
@@ -7,8 +8,9 @@ const get = async (req: any, res: any, next: any) => {
     res.status(200).json({
       data: result,
     });
-  } catch (e) {
-    next(e);
+  } catch (error: any) {
+    logger.error("Database or Unhandled Error in Controller:", error);
+    next(error);
   }
 };
 

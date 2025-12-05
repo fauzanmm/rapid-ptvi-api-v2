@@ -2,23 +2,26 @@ import type { ErrorRequestHandler } from "express";
 import { ResponseError } from "../error/error-response";
 import { logger } from "../application/logging";
 
-const errorMiddleware: ErrorRequestHandler = async (err, req, res, next) => {
-  if (!err) {
-    next();
-    return;
+const errorMiddleware: ErrorRequestHandler = async (error, req, res, next) => {
+  if (!error) {
+    return next();
   }
 
-  if (err instanceof ResponseError) {
+  // Cek apakah error adalah Custom Error (yang mencakup 400, 404, 401, dll.)
+  if (error instanceof ResponseError) {
     res
-      .status(err.status)
+      .status(error.status)
       .json({
-        status: err.status,
-        message: err.name,
-        errors: err.message,
+        status: error.status,
+        message: error.name,
+        errors: error.message,
+        timestamp: new Date().toISOString(),
       })
       .end();
-  } else {
-    logger.error("Unhandled Error:", err);
+  }
+  // Jika error BUKAN ResponseError (yaitu error sistem, database, dll.)
+  else {
+    logger.error("Unhandled Error:", error);
 
     res
       .status(500)
@@ -26,6 +29,7 @@ const errorMiddleware: ErrorRequestHandler = async (err, req, res, next) => {
         status: 500,
         message: "Internal Server Error",
         errors: "Terjadi kesalahan yang tidak terduga pada server.",
+        timestamp: new Date().toISOString(),
       })
       .end();
   }
