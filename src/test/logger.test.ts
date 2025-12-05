@@ -1,5 +1,8 @@
 // import winston from "winston";
-import { pitFuelTimeLossCurrent } from "./test-util.js";
+import {
+  pitFuelTimeLossCurrent,
+  summaryFuelTimeLossShift,
+} from "./test-util.js";
 import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
 
 // test("create new logger test", () => {
@@ -14,11 +17,15 @@ import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
 //   });
 // });
 
-test("get first data pitfueltimeloss", async () => {
+test("get pitFuelTimeLossCurrent", async () => {
   const data = await pitFuelTimeLossCurrent();
   expect(data?.RecordId).toBe(1);
 });
 
-afterAll(async () => {
-  await prismaMainMinecare.$disconnect();
+test("get summaryFuelTimeLossShift", async () => {
+  const data = await summaryFuelTimeLossShift();
+  expect(data).toEqual({
+    lossHour: 211,
+    lossFuel: 207.11028173199998,
+  });
 });

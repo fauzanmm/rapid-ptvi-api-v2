@@ -1,17 +1,8 @@
 import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
+import { ResponseError } from "../error/error-response";
+import { logger } from "../application/logging";
 
-export const pitFuelTimeLossCurrent = async () => {
-  try {
-    const data = await prismaMainMinecare.pitFuelTimeLossCurrent.findFirst();
-    console.log(data);
-
-    return data;
-  } finally {
-    prismaMainMinecare.$disconnect();
-  }
-};
-
-export const summaryFuelTimeLossShift = async () => {
+const get = async () => {
   try {
     const lossHour = await prismaMainMinecare.pitFuelTimeLossShift.count({});
     const lossFuel = await prismaMainMinecare.pitFuelTimeLossShift.aggregate({
@@ -24,10 +15,18 @@ export const summaryFuelTimeLossShift = async () => {
       lossHour: lossHour || 0,
       lossFuel: lossFuel._sum.FuelLoss || 0,
     };
-    console.log(data);
 
     return data;
-  } finally {
-    prismaMainMinecare.$disconnect();
+  } catch (error: any) {
+    logger.error("Database or Unhandled Error in Service:", error);
+
+    throw new ResponseError(
+      500,
+      `Database connection failed : ${error.message}`
+    );
   }
+};
+
+export default {
+  get,
 };
