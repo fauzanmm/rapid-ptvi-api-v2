@@ -45,11 +45,36 @@ paths:
               schema:
                 "$ref": "#/components/schemas/ErrorResponse"
               examples:
-                BadRequest:
+                Bad Request:
                   value:
                     statusCode: 400
                     error: Bad Request
-                    message: Parameter 'department' is not valid
+                    message: Request is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+                Bad Parameter:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                Not Found:
+                  value:
+                    statusCode: 404
+                    error: Not Found
+                    message: GET url path is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+                Error:
+                  value:
+                    statusCode: 404
+                    error: Error
+                    message: Data is not found
                     timestamp: "2025-07-07T10:00:00Z"
         "500":
           description: Unexpected error
@@ -62,11 +87,11 @@ paths:
                   value:
                     statusCode: 500
                     error: Internal Server Error
-                    message: data is not found
+                    message: Database connection failed
                     timestamp: "2025-07-07T10:00:00Z"
       tags:
         - Engine Detection
-  "/v2/fuelTimeLoss/shift/{department}":
+  "/v2/fuelTimeLoss/shift":
     get:
       summary:
         Get a list of trucks that are current shift has status idle/delay/down
@@ -89,11 +114,36 @@ paths:
               schema:
                 "$ref": "#/components/schemas/ErrorResponse"
               examples:
-                BadRequest:
+                Bad Request:
                   value:
                     statusCode: 400
                     error: Bad Request
-                    message: Parameter 'department' is not valid
+                    message: Request is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+                Bad Parameter:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                Not Found:
+                  value:
+                    statusCode: 404
+                    error: Not Found
+                    message: GET url path is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+                Error:
+                  value:
+                    statusCode: 404
+                    error: Error
+                    message: Data is not found
                     timestamp: "2025-07-07T10:00:00Z"
         "500":
           description: Unexpected error
@@ -106,35 +156,11 @@ paths:
                   value:
                     statusCode: 500
                     error: Internal Server Error
-                    message: data is not found
+                    message: Database connection failed
                     timestamp: "2025-07-07T10:00:00Z"
       tags:
         - Engine Detection
-      parameters:
-        - name: department
-          in: path
-          description:
-            Department value will filter the truck list data according to
-            the department trucks that have been set
-          required: true
-          schema:
-            type: string
-            default: bintang
-            enum:
-              - hatari
-              - bintang
-              - coal
-              - mine services
-              - thiess
-              - pama
-              - other
-              - jupiter
-              - msd
-              - cphd
-              - geology
-              - mo
-              - drill & blast
-  "/v2/fuelTimeLoss/shift/table/{department}":
+  "/v2/fuelTimeLoss/shift/table":
     get:
       summary:
         Get a table list of trucks that are current shift has status idle/delay/down
@@ -146,7 +172,11 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/FuelTimeLossShiftTable"
+                properties:
+                  data:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/FuelTimeLossShiftTable"
         "400":
           description: Invalid request
           content:
@@ -154,11 +184,36 @@ paths:
               schema:
                 "$ref": "#/components/schemas/ErrorResponse"
               examples:
-                BadRequest:
+                Bad Request:
                   value:
                     statusCode: 400
                     error: Bad Request
-                    message: Parameter 'department' is not valid
+                    message: Request is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+                Bad Parameter:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                Not Found:
+                  value:
+                    statusCode: 404
+                    error: Not Found
+                    message: GET url path is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+                Error:
+                  value:
+                    statusCode: 404
+                    error: Error
+                    message: Data is not found
                     timestamp: "2025-07-07T10:00:00Z"
         "500":
           description: Unexpected error
@@ -171,34 +226,11 @@ paths:
                   value:
                     statusCode: 500
                     error: Internal Server Error
-                    message: data is not found
+                    message: Database connection failed
                     timestamp: "2025-07-07T10:00:00Z"
       tags:
         - Engine Detection
       parameters:
-        - name: department
-          in: path
-          description:
-            Department value will filter the truck list data according to
-            the department trucks that have been set
-          required: true
-          schema:
-            type: string
-            default: bintang
-            enum:
-              - hatari
-              - bintang
-              - coal
-              - mine services
-              - thiess
-              - pama
-              - other
-              - jupiter
-              - msd
-              - cphd
-              - geology
-              - mo
-              - drill & blast
         - name: page
           in: query
           description: Page number for pagination, default is 1
@@ -218,7 +250,7 @@ paths:
             default: 50
             minimum: 1
             maximum: 1000
-  "/v2/fuelTimeLoss/shift/summary/{department}":
+  "/v2/fuelTimeLoss/shift/summary":
     get:
       summary:
         Get a summary of lost hours and lost fuels for each department that
@@ -241,11 +273,36 @@ paths:
               schema:
                 "$ref": "#/components/schemas/ErrorResponse"
               examples:
-                BadRequest:
+                Bad Request:
                   value:
                     statusCode: 400
                     error: Bad Request
-                    message: Parameter 'department' is not valid
+                    message: Request is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+                Bad Parameter:
+                  value:
+                    statusCode: 400
+                    error: Bad Request
+                    message: Parameter is invalid
+                    timestamp: "2025-07-07T10:00:00Z"
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ErrorResponse"
+              examples:
+                Not Found:
+                  value:
+                    statusCode: 404
+                    error: Not Found
+                    message: GET url path is not found
+                    timestamp: "2025-07-07T10:00:00Z"
+                Error:
+                  value:
+                    statusCode: 404
+                    error: Error
+                    message: Data is not found
                     timestamp: "2025-07-07T10:00:00Z"
         "500":
           description: Unexpected error
@@ -258,34 +315,10 @@ paths:
                   value:
                     statusCode: 500
                     error: Internal Server Error
-                    message: data is not found
+                    message: Database connection failed
                     timestamp: "2025-07-07T10:00:00Z"
       tags:
         - Engine Detection
-      parameters:
-        - name: department
-          in: path
-          description:
-            Department value will filter the truck list data according to
-            the department trucks that have been set
-          required: true
-          schema:
-            type: string
-            default: bintang
-            enum:
-              - hatari
-              - bintang
-              - coal
-              - mine services
-              - thiess
-              - pama
-              - other
-              - jupiter
-              - msd
-              - cphd
-              - geology
-              - mo
-              - drill & blast
   "/v2/fuelTimeLoss/month":
     get:
       summary: Get a summarized data list of truck fuel loss and hour loss each month
@@ -595,80 +628,77 @@ components:
         Minecare.
       properties:
         data:
-          type: object
-          properties:
-            data:
-              type: array
-              items:
-                "$ref": "#/components/schemas/FuelTimeLossCurrent"
-            date:
-              type: string
-              format: date-time
-              description: Latest date when the data was fetched
-              nullable: false
-              example: "2025-07-07T10:18:46.680Z"
-            crews:
-              type: array
-              description: List of crews involved in the current shift
-              items:
-                type: object
-                properties:
-                  Crew:
-                    type: string
-                    maxLength: 12
-                    example: Crew B
-                required:
-                  - Crew
-              nullable: false
-              example:
-                - Crew: All
-                - Crew: Crew B
-            shiftName:
-              type: string
-              maxLength: 12
-              description: Current shift when operation is running
-              nullable: false
-              example: Day
-            page:
-              type: integer
-              format: int32
-              description: Current page number
-              nullable: false
-              example: 2
-            limit:
-              type: integer
-              format: int32
-              description: Number of items per page
-              nullable: false
-              example: 50
-            skip:
-              type: integer
-              format: int32
-              description: Number of offseet per page
-              nullable: false
-              example: 1
-            totalData:
-              type: integer
-              format: int32
-              description: Total number of items (across all pages)
-              nullable: false
-              example: 120
-            totalPage:
-              type: integer
-              format: int32
-              description: Total number of pages
-              nullable: false
-              example: 3
-            next:
-              type: boolean
-              description: Whether there is a next page
-              nullable: false
-              example: true
-            previous:
-              type: boolean
-              description: Whether there is a previous page
-              nullable: false
-              example: true
+          type: array
+          items:
+            "$ref": "#/components/schemas/FuelTimeLossCurrent"
+        date:
+          type: string
+          format: date-time
+          description: Latest date when the data was fetched
+          nullable: false
+          example: "2025-07-07T10:18:46.680Z"
+        crews:
+          type: array
+          description: List of crews involved in the current shift
+          items:
+            type: object
+            properties:
+              Crew:
+                type: string
+                maxLength: 12
+                example: Crew B
+            required:
+              - Crew
+          nullable: false
+          example:
+            - Crew: All
+            - Crew: Crew B
+        shiftName:
+          type: string
+          maxLength: 12
+          description: Current shift when operation is running
+          nullable: false
+          example: Day
+        page:
+          type: integer
+          format: int32
+          description: Current page number
+          nullable: false
+          example: 2
+        limit:
+          type: integer
+          format: int32
+          description: Number of items per page
+          nullable: false
+          example: 50
+        skip:
+          type: integer
+          format: int32
+          description: Number of offseet per page
+          nullable: false
+          example: 1
+        totalData:
+          type: integer
+          format: int32
+          description: Total number of items (across all pages)
+          nullable: false
+          example: 120
+        totalPage:
+          type: integer
+          format: int32
+          description: Total number of pages
+          nullable: false
+          example: 3
+        next:
+          type: boolean
+          description: Whether there is a next page
+          nullable: false
+          example: true
+        previous:
+          type: boolean
+          description: Whether there is a previous page
+          nullable: false
+          example: true
     FuelTimeLossShiftSummary:
       type: object
       description:
@@ -676,26 +706,6 @@ components:
         which has delay/idle/down status in Dispatch and has fuel rate or rpm value
         in Minecare
       properties:
-        Department:
-          type: string
-          maxLength: 64
-          description: Current department unit in Dispatch
-          nullable: true
-          enum:
-            - HATARI
-            - BINTANG
-            - COAL
-            - MINE SERVICES
-            - THIESS
-            - PAMA
-            - OTHER
-            - JUPITER
-            - MSD
-            - CPHD
-            - GEOLOGY
-            - MO
-            - DRILL & BLAST
-          example: BINTANG
         LossHour:
           type: integer
           format: int64
