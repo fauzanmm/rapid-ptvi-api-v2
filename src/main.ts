@@ -1,20 +1,10 @@
 import "dotenv/config";
-import { createServer, Server as HTTPServer } from "http";
-import { Server as SocketIOServer, Socket } from "socket.io";
-import { web } from "./application/web";
+import { Socket } from "socket.io";
 import { logger } from "./application/logging";
+import { io, httpServer } from "./application/socket";
 
 const port = process.env.PORT || 3000;
 const serverHost = process.env.HOST_SERVER || "localhost";
-
-// socket.io
-const httpServer: HTTPServer = createServer(web);
-const io: SocketIOServer = new SocketIOServer(httpServer, {
-  cors: {
-    origin: "*", // Atur ini sesuai domain frontend Anda
-    methods: ["GET", "POST"],
-  },
-});
 
 io.on("connect", (socket: Socket) => {
   logger.info(`🔌 Users connected: ${socket.id}`);
