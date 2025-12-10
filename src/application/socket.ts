@@ -1,27 +1,28 @@
+// socket.ts
 import "dotenv/config";
-import { createServer, Server as HTTPServer } from "http";
-import { Server as SocketIOServer, Socket } from "socket.io";
+import { createServer } from "http";
+import { Server as SocketIOServer } from "socket.io";
 import { web } from "./web";
 import { dataPolling } from "./polling";
+import { ShiftTableFuelTimeLossSocket } from "../controller/shift-table-fueltimeloss-socket";
+import { logger } from "./logging";
 
-// socket.io
-export const httpServer: HTTPServer = createServer(web);
+export const httpServer = createServer(web);
 
-export const io: SocketIOServer = new SocketIOServer(httpServer, {
-  cors: {
-    origin: "*", // Atur ini sesuai domain frontend Anda
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  },
+export const io = new SocketIOServer(httpServer, {
+  cors: { origin: "*", methods: ["GET", "POST", "PUT", "DELETE"] },
 });
 
-export const registerSocket = (io: SocketIOServer) => {
-  dataPolling(io);
+dataPolling(io);
 
-  io.on("connection", (socket: Socket) => {
-    console.log("Client connected:", socket.id);
+io.on("connection", (socket) => {
+  logger.info(`🔌 User connected: ${socket.id}`);
 
-    socket.on("disconnect", () => {
-      console.log("Client disconnected:", socket.id);
-    });
+  // Register pagination event handler PER USER
+  const shiftTable = new ShiftTableFuelTimeLossSocket(io);
+  shiftTable.registerSocket(socket);
+
+  socket.on("disconnect", () => {
+    logger.info(`❌ User disconnected: ${socket.id}`);
   });
-};
+});
