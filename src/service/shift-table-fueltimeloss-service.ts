@@ -2,12 +2,6 @@ import { prismaMainMinecare } from "../lib/main-minecare-prisma-client";
 import { ResponseError } from "../error/error-response";
 import { logger } from "../application/logging";
 
-// interface params {
-//   skip: number;
-//   limit: number;
-//   page: number;
-// }
-
 const get = async (skip: number, limit: number, page: number) => {
   try {
     const data = await prismaMainMinecare.pitFuelTimeLossShift.findMany({

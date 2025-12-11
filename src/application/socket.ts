@@ -24,17 +24,6 @@ io.on("connection", (socket) => {
 
   ShiftTableFuelTimeLossPoller.registerSocket(socket);
 
-  // Register pagination event handler PER USER
-  // const shiftTable = new ShiftTableFuelTimeLossSocket(io);
-  // shiftTable.registerSocket(socket);
-
-  // socket.on(
-  //   "shiftTableFuelTimeLossParams",
-  //   (skip: number, page: number, limit: number) => {
-  //     logger.info({ skip, page, limit });
-  //   }
-  // );
-
   socket.on("disconnect", () => {
     logger.info(`❌ User disconnected: ${socket.id}`);
   });
