@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { logger } from "./application/logging";
-import { io, httpServer } from "./application/socket";
+import { httpServer } from "./application/socket";
 
 const port = process.env.PORT || 3000;
 const serverHost = process.env.HOST_SERVER || "localhost";
